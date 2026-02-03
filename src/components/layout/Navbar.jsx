@@ -32,15 +32,9 @@ const Navbar = () => {
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-bg/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-                <div
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="text-2xl font-bold tracking-tighter cursor-pointer flex items-center gap-2 group"
-                >
-                    <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                        B
-                    </div>
-                    <span className="hidden md:block">BEZERO <span className="font-light text-gray-400">STUDIO</span></span>
-                </div>
+                <a href="#home" className="text-2xl font-black tracking-tighter flex items-center gap-2" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">BEZERO STUDIO</span>
+                </a>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-8">

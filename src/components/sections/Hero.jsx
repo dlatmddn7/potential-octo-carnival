@@ -70,7 +70,7 @@ const Hero = () => {
                     <span className="block text-gray-300/80 text-3xl md:text-5xl mb-4 font-bold tracking-normal">
                         당신의 수고로움을
                     </span>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white to-purple-400">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-white to-pink-400">
                         BEZERO 하다.
                     </span>
                 </motion.h1>
@@ -91,7 +91,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
-                    <button className="px-8 py-4 rounded-full bg-primary text-white font-bold hover:bg-blue-600 transition-all flex items-center gap-2 group shadow-lg shadow-primary/30">
+                    <button className="px-8 py-4 rounded-full bg-primary text-white font-bold hover:bg-purple-600 transition-all flex items-center gap-2 group shadow-lg shadow-primary/30">
                         <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                         서비스 보기
                     </button>

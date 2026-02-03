@@ -6,19 +6,19 @@ const steps = [
     {
         id: "01",
         title: "기획 (Planning)",
-        desc: "클라이언트의 니즈를 분석하고, 최적의 컨셉과 스토리보드를 기획합니다.",
+        desc: "클라이언트의 니즈를 분석하고, 행사/영상의 최적화된 컨셉과 시나리오를 기획합니다.",
         icon: <ClipboardList className="w-10 h-10 text-white" />
     },
     {
         id: "02",
-        title: "촬영 (Filming)",
-        desc: "최신 장비와 전문 인력을 투입하여 고품질의 영상 및 사진을 촬영합니다.",
+        title: "준비 (Preparation)",
+        desc: "장소 섭외, 시스템 세팅, 리허설 등 완벽한 실행을 위한 철저한 사전 준비를 진행합니다.",
         icon: <Film className="w-10 h-10 text-white" />
     },
     {
         id: "03",
-        title: "편집 (Editing)",
-        desc: "전문 편집 기술과 그래픽 효과를 더해 완성도 높은 결과물을 제작합니다.",
+        title: "실행 (Execution)",
+        desc: "현장 운영 및 연출, 촬영, 송출 등 전문 인력을 투입하여 성공적인 결과를 만들어냅니다.",
         icon: <Video className="w-10 h-10 text-white" />
     }
 ];

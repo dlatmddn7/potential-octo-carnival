@@ -32,7 +32,7 @@ const FloatingWidget = () => {
                             </p>
                             <button
                                 onClick={scrollToContact}
-                                className="w-full py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-blue-600 transition-colors"
+                                className="w-full py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-purple-600 transition-colors"
                             >
                                 문의 남기기
                             </button>

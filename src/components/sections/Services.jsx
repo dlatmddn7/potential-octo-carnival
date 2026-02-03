@@ -57,7 +57,7 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group p-8 rounded-3xl bg-white/5 border border-white/5 hover:bg-primary hover:border-blue-500 transition-all duration-500 cursor-pointer flex flex-col justify-between h-[400px] relative overflow-hidden"
+                            className="group p-8 rounded-3xl bg-white/5 border border-white/5 hover:bg-primary hover:border-purple-500 transition-all duration-500 cursor-pointer flex flex-col justify-between h-[400px] relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-20 transition-opacity transform group-hover:scale-150 duration-700">
                                 {React.cloneElement(service.icon, { size: 100 })}
