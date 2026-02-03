@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "project": "Antigravity Web Application",
+    "date": "2026-02-03",
+    "prepared_by": "Software Development Manager"
+  },
+  "product_overview": "Antigravity is a modern, responsive web application built with React and Vite, featuring animated and interactive sections to present company information, services, and portfolio in an engaging way.",
+  "core_goals": [
+    "Provide a visually appealing and interactive website with smooth animations and transitions.",
+    "Ensure responsiveness and accessibility across desktop and mobile devices.",
+    "Showcase company services, portfolio, and venue options effectively.",
+    "Enable easy contact with the company via a contact section with convenient features."
+  ],
+  "key_features": [
+    "Fixed navbar with glassmorphism effect and mobile-friendly menu for easy navigation.",
+    "Hero section with animated background slideshow and engaging animations.",
+    "Services section displaying company offerings in a grid layout for clarity.",
+    "Portfolio gallery with hover effects showcasing projects visually.",
+    "Venue list with expandable accordion details to provide more information on demand.",
+    "Contact section with email copy feature to facilitate user communication.",
+    "Main app layout managing the structure and flow of the application."
+  ],
+  "user_flow_summary": [
+    "User lands on the homepage and navigates through sections using the fixed navbar.",
+    "User experiences animated hero slideshow and transitions for an engaging entrance.",
+    "User browses the services grid to understand company offerings.",
+    "User views portfolio items with interactive hover effects.",
+    "User explores venue details by expanding accordions for more information.",
+    "User contacts the company easily via the contact section, with option to copy email address.",
+    "User can navigate smoothly between sections on both desktop and mobile devices."
+  ],
+  "validation_criteria": [
+    "All main sections (Navbar, Hero, Services, Portfolio, Venue, Contact) render correctly and respond to user interactions.",
+    "Animations and transitions perform smoothly without jank or delays.",
+    "Responsive design works flawlessly on different screen sizes and devices.",
+    "Mobile menu is fully functional and accessible.",
+    "Email copy feature in contact section works reliably across browsers.",
+    "Code adheres to linting rules with no errors reported.",
+    "App builds successfully without errors and passes preview tests."
+  ],
+  "code_summary": {
+    "tech_stack": [
+      "JavaScript",
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React"
+    ],
+    "features": [
+      {
+        "name": "Navbar",
+        "description": "Fixed navigation bar with glassmorphism effect and mobile menu.",
+        "files": [
+          "src/components/layout/Navbar.jsx"
+        ]
+      },
+      {
+        "name": "Hero",
+        "description": "Hero section with background slideshow and animations.",
+        "files": [
+          "src/components/sections/Hero.jsx"
+        ]
+      },
+      {
+        "name": "Services",
+        "description": "Grid layout displaying company services.",
+        "files": [
+          "src/components/sections/Services.jsx"
+        ]
+      },
+      {
+        "name": "Portfolio",
+        "description": "Portfolio gallery with hover effects.",
+        "files": [
+          "src/components/sections/Portfolio.jsx"
+        ]
+      },
+      {
+        "name": "Venue",
+        "description": "Venue list with accordion details.",
+        "files": [
+          "src/components/sections/Venue.jsx"
+        ]
+      },
+      {
+        "name": "Contact",
+        "description": "Contact section with email copy feature.",
+        "files": [
+          "src/components/sections/Contact.jsx"
+        ]
+      },
+      {
+        "name": "App Layout",
+        "description": "Main application layout layout.",
+        "files": [
+          "src/App.jsx"
+        ]
+      }
+    ]
+  }
+}

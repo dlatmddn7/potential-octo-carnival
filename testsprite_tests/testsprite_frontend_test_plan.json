@@ -1,0 +1,278 @@
+[
+  {
+    "id": "TC001",
+    "title": "Navbar renders correctly with glassmorphism effect",
+    "description": "Verify that the fixed navigation bar renders properly with the glassmorphism effect on desktop screens.",
+    "category": "ui",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the homepage on a desktop screen."
+      },
+      {
+        "type": "assertion",
+        "description": "Check that the navbar is fixed at the top and has the glassmorphism visual effect."
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Navbar mobile menu functionality",
+    "description": "Verify the navbar mobile menu opens and closes correctly and is accessible on mobile devices.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the homepage on a mobile device or mobile viewport."
+      },
+      {
+        "type": "action",
+        "description": "Tap the mobile menu icon to open the menu."
+      },
+      {
+        "type": "assertion",
+        "description": "Check that the mobile menu expands showing navigation links."
+      },
+      {
+        "type": "action",
+        "description": "Tap the close button or a navigation link."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the mobile menu closes properly."
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Hero section background slideshow and animations",
+    "description": "Ensure the hero section shows the animated background slideshow and other animations smoothly.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load the homepage."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the background slideshow cycles through images automatically."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that animations on the hero text and elements are triggered and perform smoothly."
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Services section grid layout rendering",
+    "description": "Validate that the services offered are displayed in a clear grid layout with correct content.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Services section."
+      },
+      {
+        "type": "assertion",
+        "description": "Check that services are displayed in a grid layout with consistent styling."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify each service item contains title and description or icons as expected."
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Portfolio gallery hover effects",
+    "description": "Confirm that portfolio items display hover effects correctly on mouse over to showcase projects.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Portfolio section."
+      },
+      {
+        "type": "action",
+        "description": "Hover the mouse cursor over a portfolio item."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that the portfolio item's hover effect is triggered, such as overlay or animation."
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Venue accordion expands and collapses details",
+    "description": "Ensure venue list accordions expand to show details on click and collapse when clicked again or another accordion is opened.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Venue section."
+      },
+      {
+        "type": "action",
+        "description": "Click on a venue accordion header."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the accordion expands and reveals detailed information."
+      },
+      {
+        "type": "action",
+        "description": "Click on the same accordion header again."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the accordion collapses hiding the details."
+      },
+      {
+        "type": "action",
+        "description": "Click on a different venue accordion header."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new accordion expands and previous accordion collapses."
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Contact section email copy feature",
+    "description": "Test that the email copy button reliably copies the correct email address to the clipboard on various browsers.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Contact section."
+      },
+      {
+        "type": "action",
+        "description": "Click the email copy button."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the email address is copied to the clipboard."
+      },
+      {
+        "type": "action",
+        "description": "Paste the clipboard content to confirm the email address text."
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Responsive design on desktop, tablet, and mobile",
+    "description": "Check the entire website layout adjusts correctly and usability is maintained across desktop, tablet, and mobile screen sizes.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the website on a desktop browser."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify layout is properly rendered and all elements are visible and accessible."
+      },
+      {
+        "type": "action",
+        "description": "Resize browser or open on tablet viewport."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the layout adjusts without overlapping or broken styling."
+      },
+      {
+        "type": "action",
+        "description": "Open the website on a mobile device or small viewport."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify mobile menu is functional and all sections are accessible and correctly displayed."
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Smooth navigation between sections using navbar",
+    "description": "Verify that clicking navigation links in the fixed navbar scrolls smoothly to the corresponding page sections.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load the homepage."
+      },
+      {
+        "type": "action",
+        "description": "Click each navbar navigation link one by one."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the page scrolls smoothly to the related section on each click."
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Animation performance and absence of jank",
+    "description": "Validate that all animations and transitions in the app run smoothly without delays or stuttering.",
+    "category": "performance",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate through homepage and various sections multiple times."
+      },
+      {
+        "type": "assertion",
+        "description": "Observe animations to ensure they play fluidly without lag or jank."
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Application build completes successfully",
+    "description": "Check that the application can build without any errors or warnings using the Vite build process.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Run the build command for the app."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the build completes successfully with zero errors."
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Application passes linting checks with no errors",
+    "description": "Ensure codebase adheres to linting rules and no lint errors or warnings are reported.",
+    "category": "quality assurance",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Run the project's linting tool on the codebase."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that there are zero linting errors or warnings."
+      }
+    ]
+  }
+]

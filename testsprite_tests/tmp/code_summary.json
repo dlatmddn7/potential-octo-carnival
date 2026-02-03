@@ -1,0 +1,61 @@
+{
+    "tech_stack": [
+        "JavaScript",
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Lucide React"
+    ],
+    "features": [
+        {
+            "name": "Navbar",
+            "description": "Fixed navigation bar with glassmorphism effect and mobile menu.",
+            "files": [
+                "src/components/layout/Navbar.jsx"
+            ]
+        },
+        {
+            "name": "Hero",
+            "description": "Hero section with background slideshow and animations.",
+            "files": [
+                "src/components/sections/Hero.jsx"
+            ]
+        },
+        {
+            "name": "Services",
+            "description": "Grid layout displaying company services.",
+            "files": [
+                "src/components/sections/Services.jsx"
+            ]
+        },
+        {
+            "name": "Portfolio",
+            "description": "Portfolio gallery with hover effects.",
+            "files": [
+                "src/components/sections/Portfolio.jsx"
+            ]
+        },
+        {
+            "name": "Venue",
+            "description": "Venue list with accordion details.",
+            "files": [
+                "src/components/sections/Venue.jsx"
+            ]
+        },
+        {
+            "name": "Contact",
+            "description": "Contact section with email copy feature.",
+            "files": [
+                "src/components/sections/Contact.jsx"
+            ]
+        },
+        {
+            "name": "App Layout",
+            "description": "Main application layout layout.",
+            "files": [
+                "src/App.jsx"
+            ]
+        }
+    ]
+}

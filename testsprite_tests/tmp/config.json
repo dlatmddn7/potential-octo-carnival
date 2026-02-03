@@ -1,0 +1,15 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:5174/\"c:\\\\Users\\\\USER\\\\Desktop\\\\antigravity\"",
+  "executionArgs": {
+    "projectName": "antigravity",
+    "projectPath": "c:\\Users\\USER\\Desktop\\antigravity",
+    "testIds": [],
+    "additionalInstruction": "Verify that FloatingWidget, Process, Consulting, Partners sections render correctly and check for any console errors.",
+    "envs": {
+      "API_KEY": "sk-user-EVOjV3ifxB5H7j2iObimt0CWrn3QZZtLr0FhlQTOsZFGDiHxKYYJnevR2IzyHwcKWsC7722JR2O2SV4UiEn2rtBR5IVnbmjkNiRGxE3s3x6QIc7HI61NEYlzeLK17xhwWuw"
+    }
+  }
+}

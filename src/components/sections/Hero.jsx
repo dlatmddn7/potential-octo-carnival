@@ -32,9 +32,9 @@ const Hero = () => {
                         transition={{ duration: 1.5 }}
                         className="absolute inset-0"
                     >
-                        <img 
-                            src={heroImages[currentIndex]} 
-                            alt="Background" 
+                        <img
+                            src={heroImages[currentIndex]}
+                            alt="Background"
                             className="w-full h-full object-cover"
                         />
                         {/* Overlay to darken images for text readability */}
@@ -97,6 +97,10 @@ const Hero = () => {
                     </button>
                     <button className="px-8 py-4 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 transition-all font-bold flex items-center gap-2 group backdrop-blur-md">
                         포트폴리오
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                    <button className="px-8 py-4 rounded-full border border-amber-500/50 bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 transition-all font-bold flex items-center gap-2 group backdrop-blur-md">
+                        기업 소개서
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
                 </motion.div>
