@@ -25,10 +25,72 @@ const projects = [
         details: "데모데이 기획, 현장 운영, 영상 제작",
         description: "창업기업의 투자 유치를 위한 프리 데모데이 행사. 기업별 피칭 영상 제작부터 리허설 코칭, 현장 운영까지 성공적인 IR을 위한 전방위 솔루션을 제공했습니다."
     },
-    { id: 3, title: '기업 역량강화 멘토링', category: 'Workshop & Seminar', image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000' },
-    { id: 4, title: '전시 부스 기획 및 디자인', category: 'Exhibition', image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1000' },
-    { id: 5, title: '지역 축제 및 페스티벌', category: 'Festival', image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=1000' },
-    { id: 6, title: '비즈니스 세미나', category: 'Conference', image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1000' },
+    {
+        id: 3,
+        title: "2024 광주창업페스티벌",
+        category: "Festival",
+        image: "/images/portfolio/startup_festival/main.jpg",
+        client: "광주광역시 / 광주테크노파크",
+        period: "2024.11.28",
+        participants: "500+",
+        details: "페스티벌 총괄 운영 및 부스 조성",
+        description: "지역 최대 규모의 창업 페스티벌. 개막식부터 포럼, 전시 부스, 투자 IR, 네트워킹 프로그램까지 행사의 전 과정을 통합 운영하였습니다."
+    },
+    {
+        id: 4,
+        title: "2025 광주광역시교육청 ESG 포럼",
+        category: "Conference",
+        image: "/images/portfolio/esg_forum/main.jpg",
+        client: "광주광역시교육청",
+        period: "2025.01",
+        participants: "200+",
+        details: "포럼 기획 및 행사장 연출",
+        description: "지속가능한 교육 환경을 위한 ESG 포럼. 친환경 자재를 활용한 무대 조성과 페이퍼리스 운영으로 ESG 가치를 행사 현장에 직접 구현했습니다."
+    },
+    {
+        id: 5,
+        title: "2025 구청장협의회",
+        category: "Conference",
+        image: "/images/portfolio/district_council/main.jpg",
+        client: "광주광역시 구청장협의회",
+        period: "2025.04",
+        participants: "50+",
+        details: "협의회 정례회의 운영 및 의전",
+        description: "광주 5개 구청장이 모이는 정례 협의회. 격식 있는 의전과 원활한 회의 진행을 위한 시스템 운영을 지원했습니다."
+    },
+    {
+        id: 6,
+        title: "2025 로봇 페스티벌",
+        category: "Festival / Exhibition",
+        image: "/images/portfolio/robot_festival/main.jpg",
+        client: "광주광역시",
+        period: "2025.04",
+        participants: "1,000+",
+        details: "전시 체험존 조성 및 경진대회 운영",
+        description: "미래 과학 인재 양성을 위한 로봇 페스티벌. 다양한 로봇 전시 체험존과 학생 로봇 경진대회를 안전하고 흥미롭게 운영했습니다."
+    },
+    {
+        id: 7,
+        title: "2024 해남 고구마 라이브커머스",
+        category: "Promotion / Live Commerce",
+        image: "/images/portfolio/haenam_sweet_potato/main.jpg",
+        client: "해남군",
+        period: "2024.10",
+        participants: "온라인 시청자 10,000+",
+        details: "라이브커머스 기획/송출 및 세트장 연출",
+        description: "지역 특산물 판로 개척을 위한 라이브커머스. 전문 쇼호스트 섭외부터 방송 기획, 현장 세트장 조성 및 고화질 송출까지 원스톱으로 수행했습니다."
+    },
+    {
+        id: 8,
+        title: "2024 사회적경제 소셜임팩트 IR",
+        category: "IR Pitching",
+        image: "/images/portfolio/social_economy_ir/main.jpg",
+        client: "광주사회적경제지원센터",
+        period: "2024.10",
+        participants: "100+",
+        details: "IR 피칭 대회 운영 및 투자자 매칭",
+        description: "사회적경제 기업의 투자 유치를 위한 IR 대회. '온스테이지' 컨셉의 몰입감 있는 무대 연출로 기업의 발표 효과를 극대화했습니다."
+    }
 ];
 
 const Portfolio = () => {
