@@ -33,7 +33,6 @@ const Venue = () => {
     const [openIndex, setOpenIndex] = useState(0);
 
     return (
-    return (
         <section id="venues" className="py-32 bg-gray-50 relative z-10 border-t border-gray-200">
             <div className="max-w-5xl mx-auto px-6">
                 <div className="text-center mb-20">
