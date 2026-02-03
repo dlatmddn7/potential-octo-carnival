@@ -37,7 +37,7 @@ const Hero = () => {
                         <img
                             src={heroImages[currentIndex]}
                             alt="Background"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover blur-[2px]"
                         />
                         {/* Overlay to darken images for text readability */}
                         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />

@@ -137,7 +137,7 @@ const Portfolio = () => {
                             <img
                                 src={project.image}
                                 alt={project.title}
-                                className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                                className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] blur-[2px]"
                             />
 
                             {/* Play Button Overlay */}
