@@ -81,7 +81,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed drop-shadow-lg"
                 >
-                    비제로스튜디오는 <span className="text-white font-bold">디자인, 영상, 행사, 컨설팅</span>까지<br className="hidden md:block" />
+                    비제로스튜디오는 <span className="text-white font-bold">기획, 연출, 운영, 컨설팅</span>까지<br className="hidden md:block" />
                     비즈니스의 성공을 위한 크리에이티브 올인원 솔루션을 제공합니다.
                 </motion.p>
 

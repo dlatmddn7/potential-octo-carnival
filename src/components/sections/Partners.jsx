@@ -29,7 +29,7 @@ const Partners = () => {
                         viewport={{ once: true }}
                         className="text-3xl md:text-4xl font-bold text-gray-900"
                     >
-                        영상 프로젝트를 진행한 <br className="md:hidden" /> 다양한 기관 및 업체들
+                        행사 프로젝트를 진행한 <br className="md:hidden" /> 다양한 기관 및 업체들
                     </motion.h2>
                 </div>
 

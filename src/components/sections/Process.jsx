@@ -6,7 +6,7 @@ const steps = [
     {
         id: "01",
         title: "기획 (Planning)",
-        desc: "클라이언트의 니즈를 분석하고, 행사/영상의 최적화된 컨셉과 시나리오를 기획합니다.",
+        desc: "클라이언트의 니즈를 분석하고, 행사의 최적화된 컨셉과 시나리오를 기획합니다.",
         icon: <ClipboardList className="w-10 h-10 text-white" />
     },
     {

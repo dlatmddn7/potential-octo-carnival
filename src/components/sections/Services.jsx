@@ -17,8 +17,8 @@ const services = [
     },
     {
         title: "Creative & Media",
-        desc: "Bezero Studio만의 차별점. 자체 디자인팀과 영상팀이 행사의 격을 높이는 고품질 비주얼 아이덴티티를 제작합니다.",
-        tags: ["키비주얼 디자인", "행사 홍보 영상", "굿즈 제작", "무대 디자인"],
+        desc: "Bezero Studio만의 차별점. 자체 디자인팀이 행사의 격을 높이는 고품질 비주얼 아이덴티티를 제작합니다.",
+        tags: ["키비주얼 디자인", "행사 홍보물", "굿즈 제작", "무대 디자인"],
         icon: <PenTool className="text-purple-600" />
     }
 ];

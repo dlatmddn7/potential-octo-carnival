@@ -61,7 +61,7 @@ const AIPlanning = () => {
                         당신의 아이디어를 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">AI와 함께</span> 구체화하세요
                     </motion.h2>
                     <p className="text-gray-500 text-lg">
-                        진행하고 싶은 행사나 영상의 주제를 입력해보세요.<br />
+                        진행하고 싶은 행사의 주제를 입력해보세요.<br />
                         AI가 초안 기획과 아이디어를 제안해드립니다.
                     </p>
                 </div>
@@ -76,7 +76,7 @@ const AIPlanning = () => {
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
-                            placeholder="예: 스타트업 네트워킹 파티, 신제품 런칭 영상..."
+                            placeholder="예: 스타트업 네트워킹 파티, 기업 워크숍, 신제품 런칭 행사..."
                             className="w-full bg-gray-50 border border-gray-200 rounded-xl px-6 py-4 pr-16 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:bg-white transition-colors"
                         />
                         <button
