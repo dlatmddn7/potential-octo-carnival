@@ -47,46 +47,46 @@ const videos = [
         videoId: "19D5gwwxC0s",
         description: "로컬 브랜드 성장 스토리"
     },
-    // 지역 홍보 콘텐츠
+    // 별별동구 시리즈
     {
         id: 7,
         title: "별별동구 시즌1 - 동구의 숨은 이야기",
-        category: "지역 홍보 콘텐츠",
+        category: "별별동구 시리즈",
         videoId: "MWfnwef9EAE",
         description: "광주 동구의 다양한 매력 탐방"
     },
     {
         id: 8,
         title: "별별동구 시즌1 - 로컬 맛집 탐방",
-        category: "지역 홍보 콘텐츠",
+        category: "별별동구 시리즈",
         videoId: "Oh2ApM5Fd4k",
         description: "동구의 숨은 맛집을 찾아서"
     },
     {
         id: 9,
         title: "별별동구 시즌1 - 문화예술 거리",
-        category: "지역 홍보 콘텐츠",
+        category: "별별동구 시리즈",
         videoId: "QN_Dv2WLm5A",
         description: "동구의 문화예술 현장"
     },
     {
         id: 10,
         title: "별별동구 시즌1 - 역사 탐방",
-        category: "지역 홍보 콘텐츠",
+        category: "별별동구 시리즈",
         videoId: "cmDkUyzuzpg",
         description: "동구의 역사와 전통"
     },
     {
         id: 11,
         title: "별별동구 시즌1 - 청년 창업 거리",
-        category: "지역 홍보 콘텐츠",
+        category: "별별동구 시리즈",
         videoId: "sYJeTCp4bbE",
         description: "청년들이 만들어가는 동구"
     },
     {
         id: 12,
         title: "별별동구 시즌1 - 시장 이야기",
-        category: "지역 홍보 콘텐츠",
+        category: "별별동구 시리즈",
         videoId: "6i14yvqsclI",
         description: "전통시장의 활력과 정"
     },
@@ -132,7 +132,7 @@ const Media = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [activeFilter, setActiveFilter] = useState('전체');
 
-    const categories = ['전체', '인터뷰 콘텐츠', '지역 홍보 콘텐츠', '라이브커머스'];
+    const categories = ['전체', '인터뷰 콘텐츠', '별별동구 시리즈', '라이브커머스'];
 
     const filteredVideos = activeFilter === '전체'
         ? videos
@@ -210,8 +210,8 @@ const Media = () => {
                             key={category}
                             onClick={() => setActiveFilter(category)}
                             className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${activeFilter === category
-                                    ? 'bg-purple-600 text-white shadow-lg'
-                                    : 'bg-white text-gray-600 hover:bg-purple-50 border border-gray-200'
+                                ? 'bg-purple-600 text-white shadow-lg'
+                                : 'bg-white text-gray-600 hover:bg-purple-50 border border-gray-200'
                                 }`}
                         >
                             {category}
