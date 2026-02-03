@@ -3,8 +3,28 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
-    { id: 1, title: '데모데이, IR 행사', category: 'Demo Day & IR Pitching', image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=1000' },
-    { id: 2, title: '밋업, 네트워킹 행사', category: 'Networking Event', image: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=1000' },
+    {
+        id: 1,
+        title: "2024 IBK창공 광주 '창공의 밤'",
+        category: "Event Planning & Operation",
+        image: "/images/portfolio/ibk_changgong/main.jpg",
+        client: "IBK기업은행 / 전남대학교 기술지주회사",
+        period: "2024.12.20",
+        participants: "100+",
+        details: "성과공유회 및 네트워킹 파티 기획/운영",
+        description: "스타트업과 투자자, 유관기관이 함께하는 네트워킹 행사 '창공의 밤'. 크리스마스 컨셉의 공간 연출과 편안한 네트워킹 분위기를 조성하여 참여자들의 자연스러운 교류를 유도했습니다."
+    },
+    {
+        id: 2,
+        title: "IBK창공 광주 1기 PRE-DEMO DAY",
+        category: "Demo Day & IR Pitching",
+        image: "/images/portfolio/ibk_predemoday/main_hall.jpg",
+        client: "IBK기업은행 / 전남대학교 기술지주회사",
+        period: "2024.10.29",
+        participants: "80+",
+        details: "데모데이 기획, 현장 운영, 영상 제작",
+        description: "창업기업의 투자 유치를 위한 프리 데모데이 행사. 기업별 피칭 영상 제작부터 리허설 코칭, 현장 운영까지 성공적인 IR을 위한 전방위 솔루션을 제공했습니다."
+    },
     { id: 3, title: '기업 역량강화 멘토링', category: 'Workshop & Seminar', image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000' },
     { id: 4, title: '전시 부스 기획 및 디자인', category: 'Exhibition', image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1000' },
     { id: 5, title: '지역 축제 및 페스티벌', category: 'Festival', image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=1000' },
