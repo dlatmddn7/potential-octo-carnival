@@ -21,6 +21,13 @@ const Hero = () => {
         return () => clearInterval(timer);
     }, []);
 
+    const scrollTo = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
             {/* Background Slideshow */}
@@ -39,10 +46,10 @@ const Hero = () => {
                             alt="Background"
                             className="w-full h-full object-cover blur-[2px]"
                         />
-                        {/* Overlay to darken images for text readability */}
-                        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
-                        {/* Gradient overlay for smooth transition to next section */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black" />
+                        {/* Lighter overlay for transparency - blends with white theme */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-white/70 backdrop-blur-[1px]" />
+                        {/* Gradient overlay for smooth transition to white section below */}
+                        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/80 to-transparent" />
                     </motion.div>
                 </AnimatePresence>
             </div>
@@ -93,11 +100,17 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
-                    <button className="px-8 py-4 rounded-full bg-primary text-white font-bold hover:bg-purple-600 transition-all flex items-center gap-2 group shadow-lg shadow-primary/30">
+                    <button
+                        onClick={() => scrollTo('services')}
+                        className="px-8 py-4 rounded-full bg-primary text-white font-bold hover:bg-purple-600 transition-all flex items-center gap-2 group shadow-lg shadow-primary/30"
+                    >
                         <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                         서비스 보기
                     </button>
-                    <button className="px-8 py-4 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 transition-all font-bold flex items-center gap-2 group backdrop-blur-md">
+                    <button
+                        onClick={() => scrollTo('portfolio')}
+                        className="px-8 py-4 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 transition-all font-bold flex items-center gap-2 group backdrop-blur-md"
+                    >
                         포트폴리오
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
@@ -115,8 +128,8 @@ const Hero = () => {
                 transition={{ delay: 1, duration: 1 }}
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10"
             >
-                <div className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-1 backdrop-blur-sm">
-                    <div className="w-1 h-2 bg-white/50 rounded-full" />
+                <div className="w-6 h-10 rounded-full border-2 border-gray-400/50 flex items-start justify-center p-1 backdrop-blur-sm">
+                    <div className="w-1 h-2 bg-gray-500/50 rounded-full" />
                 </div>
             </motion.div>
         </section>
@@ -124,3 +137,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
