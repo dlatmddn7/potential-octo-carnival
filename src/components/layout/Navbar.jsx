@@ -17,6 +17,7 @@ const Navbar = () => {
     const navItems = [
         { id: 'services', label: 'Services' },
         { id: 'portfolio', label: 'Portfolio' },
+        { id: 'media', label: 'Media' },
         { id: 'venues', label: 'Venue List' },
         { id: 'contact', label: 'Contact' },
     ];

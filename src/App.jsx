@@ -7,6 +7,7 @@ import Process from './components/sections/Process';
 import AIPlanning from './components/sections/AIPlanning';
 import Consulting from './components/sections/Consulting';
 import Portfolio from './components/sections/Portfolio';
+import Media from './components/sections/Media';
 import Partners from './components/sections/Partners';
 import Venue from './components/sections/Venue';
 import Contact from './components/sections/Contact';
@@ -21,6 +22,7 @@ function App() {
       <Services />
       <Consulting />
       <Portfolio />
+      <Media />
       <Partners />
       <Venue />
       <Contact />
