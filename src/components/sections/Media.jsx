@@ -4,46 +4,46 @@ import { Play, X, Youtube, Film, ExternalLink } from 'lucide-react';
 
 // YouTube video data with real video IDs and actual titles/descriptions
 const videos = [
-    // 별별동구 시리즈 (인터뷰 콘텐츠)
+    // 지역홍보 (인터뷰 콘텐츠)
     {
         id: 1,
         title: "선아리 - 작은 바느질로 이어가는 큰 가치",
-        category: "별별동구 시리즈",
+        category: "지역홍보",
         videoId: "qKt-oz-zEcY",
         description: "친환경 굿즈 제작 전문기업, 봉제 기술을 가진 시니어와 취약계층이 함께하는 책임소비 이야기"
     },
     {
         id: 2,
         title: "에드업 - 복지와 스포츠를 잇다",
-        category: "별별동구 시리즈",
+        category: "지역홍보",
         videoId: "XoH_C0KMHts",
         description: "비대면 운동 플랫폼으로 장애인과 취약계층이 운동에 쉽게 접근할 수 있도록 돕는 사회적 가치 실현"
     },
     {
         id: 3,
         title: "더일러스트앤아트 - 그림과 예술로 피워내는 치유",
-        category: "별별동구 시리즈",
+        category: "지역홍보",
         videoId: "zQLmY3yJPn4",
         description: "보태니컬 아트와 컬러 심리를 접목한 교육·전시·출판으로 생애전환기 시민들에게 치유와 성장 제안"
     },
     {
         id: 4,
         title: "민들레씨앤비 - 건강한 빵을 만들며 성장하는",
-        category: "별별동구 시리즈",
+        category: "지역홍보",
         videoId: "19D5gwwxC0s",
         description: "광주 동구 인증사회적기업 빵글빵글, 속이 편한 빵으로 자립준비청년을 돕는 사회적 가치 창출"
     },
     {
         id: 5,
         title: "행복한쓰임 개소식",
-        category: "별별동구 시리즈",
+        category: "지역홍보",
         videoId: "MWfnwef9EAE",
         description: "행복한쓰임협동조합, 선아리, 좋은날에가 함께한 공공 개소식 현장"
     },
     {
         id: 6,
         title: "헌혈, 생명을 살리는 아름다운 도전",
-        category: "별별동구 시리즈",
+        category: "헌혈캠페인",
         videoId: "QN_Dv2WLm5A",
         description: "건강할 때 헌혈하는 것은 자신과 사랑하는 가족, 모두를 위한 사랑의 실천"
     },
@@ -132,7 +132,7 @@ const Media = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [activeFilter, setActiveFilter] = useState('전체');
 
-    const categories = ['전체', '별별동구 시리즈', '인터뷰 콘텐츠', '라이브커머스'];
+    const categories = ['전체', '지역홍보', '인터뷰 콘텐츠', '라이브커머스', '헌혈캠페인'];
 
     const filteredVideos = activeFilter === '전체'
         ? videos
@@ -210,8 +210,8 @@ const Media = () => {
                             key={category}
                             onClick={() => setActiveFilter(category)}
                             className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${activeFilter === category
-                                    ? 'bg-purple-600 text-white shadow-lg'
-                                    : 'bg-white text-gray-600 hover:bg-purple-50 border border-gray-200'
+                                ? 'bg-purple-600 text-white shadow-lg'
+                                : 'bg-white text-gray-600 hover:bg-purple-50 border border-gray-200'
                                 }`}
                         >
                             {category}
