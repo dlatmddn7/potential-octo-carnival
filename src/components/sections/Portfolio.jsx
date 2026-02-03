@@ -19,15 +19,26 @@ const projects = [
         id: 2,
         title: "IBK창공 광주 1기 PRE-DEMO DAY",
         category: "Demo Day & IR Pitching",
-        image: "/images/portfolio/ibk_predemoday/main_hall.jpg",
+        image: "/images/hero/slide1.jpg",
         client: "IBK기업은행 / 전남대학교 기술지주회사",
         period: "2024.10.29",
         participants: "80+",
-        details: "데모데이 기획, 현장 운영, 영상 제작",
-        description: "창업기업의 투자 유치를 위한 프리 데모데이 행사. 기업별 피칭 영상 제작부터 리허설 코칭, 현장 운영까지 성공적인 IR을 위한 전방위 솔루션을 제공했습니다."
+        details: "데모데이 기획, 현장 운영",
+        description: "창업기업의 투자 유치를 위한 프리 데모데이 행사. 기업별 피칭부터 리허설 코칭, 현장 운영까지 성공적인 IR을 위한 전방위 솔루션을 제공했습니다."
     },
     {
         id: 3,
+        title: "IBK창공 광주 2기 PRE-DEMO DAY",
+        category: "Demo Day & IR Pitching",
+        image: "/images/portfolio/ibk_predemoday_2/main.jpg",
+        client: "IBK기업은행 / 전남대학교 기술지주회사",
+        period: "2025.01",
+        participants: "80+",
+        details: "데모데이 기획, 현장 운영",
+        description: "IBK창공 광주 2기 스타트업들의 투자 유치를 위한 프리 데모데이. 기업별 피칭과 투자자 매칭을 위한 전문적인 행사 운영을 수행했습니다."
+    },
+    {
+        id: 4,
         title: "2024 광주창업페스티벌",
         category: "Festival",
         image: "/images/portfolio/startup_festival/main.jpg",
@@ -38,7 +49,7 @@ const projects = [
         description: "지역 최대 규모의 창업 페스티벌. 개막식부터 포럼, 전시 부스, 투자 IR, 네트워킹 프로그램까지 행사의 전 과정을 통합 운영하였습니다."
     },
     {
-        id: 4,
+        id: 5,
         title: "2025 광주광역시교육청 ESG 포럼",
         category: "Conference",
         image: "/images/portfolio/esg_forum/main.jpg",
@@ -49,7 +60,7 @@ const projects = [
         description: "지속가능한 교육 환경을 위한 ESG 포럼. 친환경 자재를 활용한 무대 조성과 페이퍼리스 운영으로 ESG 가치를 행사 현장에 직접 구현했습니다."
     },
     {
-        id: 5,
+        id: 6,
         title: "2025 구청장협의회",
         category: "Conference",
         image: "/images/portfolio/district_council/main.jpg",
@@ -60,7 +71,7 @@ const projects = [
         description: "광주 5개 구청장이 모이는 정례 협의회. 격식 있는 의전과 원활한 회의 진행을 위한 시스템 운영을 지원했습니다."
     },
     {
-        id: 6,
+        id: 7,
         title: "2025 로봇 페스티벌",
         category: "Festival / Exhibition",
         image: "/images/portfolio/robot_festival/main.jpg",
@@ -71,7 +82,7 @@ const projects = [
         description: "미래 과학 인재 양성을 위한 로봇 페스티벌. 다양한 로봇 전시 체험존과 학생 로봇 경진대회를 안전하고 흥미롭게 운영했습니다."
     },
     {
-        id: 7,
+        id: 8,
         title: "2024 해남 고구마 라이브커머스",
         category: "Promotion / Live Commerce",
         image: "/images/portfolio/haenam_sweet_potato/main.jpg",
@@ -82,7 +93,7 @@ const projects = [
         description: "지역 특산물 판로 개척을 위한 라이브커머스. 전문 쇼호스트 섭외부터 방송 기획, 현장 세트장 조성 및 고화질 송출까지 원스톱으로 수행했습니다."
     },
     {
-        id: 8,
+        id: 9,
         title: "2024 사회적경제 소셜임팩트 IR",
         category: "IR Pitching",
         image: "/images/portfolio/social_economy_ir/main.jpg",
