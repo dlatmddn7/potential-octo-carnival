@@ -2,8 +2,9 @@
 
 @theme {
   /* Spline-inspired dark theme colors */
-  --color-bg: #050505;
-  --color-surface: #111111;
+  /* Spline-inspired Light theme colors */
+  --color-bg: #ffffff;
+  --color-surface: #f3f4f6;
   --color-primary: #a855f7;
   --color-accent: #3b82f6;
 
@@ -23,7 +24,7 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-white/70 backdrop-blur-md border border-gray-200 shadow-sm;
   }
 
   .glass-hover {

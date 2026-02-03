@@ -25,10 +25,10 @@ const steps = [
 
 const Process = () => {
     return (
-        <section id="process" className="py-32 bg-surface relative overflow-hidden">
+        <section id="process" className="py-32 bg-gray-50 relative overflow-hidden">
             {/* Background Decorations */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-200/30 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-200/30 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="text-center mb-20">
@@ -63,10 +63,10 @@ const Process = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="relative z-10 bg-[#0A0A0A] border border-white/10 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 group"
+                            className="relative z-10 bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl hover:border-purple-200 transition-all duration-300 group"
                         >
-                            <div className="w-20 h-20 bg-gradient-to-br from-gray-800 to-black rounded-full flex items-center justify-center mb-8 mx-auto shadow-lg border border-white/5 group-hover:scale-110 transition-transform duration-300">
-                                {step.icon}
+                            <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-white rounded-full flex items-center justify-center mb-8 mx-auto shadow-sm border border-gray-100 group-hover:scale-110 transition-transform duration-300">
+                                {React.cloneElement(step.icon, { className: "w-10 h-10 text-purple-600" })}
                             </div>
                             <h3 className="text-xl font-bold mb-2 text-center flex items-center justify-center gap-2">
                                 <span className="text-primary font-mono text-sm">{step.id}.</span> {step.title}

@@ -13,7 +13,7 @@ import Contact from './components/sections/Contact';
 
 function App() {
   return (
-    <div className="bg-bg min-h-screen text-white font-sans selection:bg-primary/30">
+    <div className="bg-bg min-h-screen text-gray-900 font-sans selection:bg-purple-100 selection:text-purple-900">
       <Navbar />
       <Hero />
       <Process />

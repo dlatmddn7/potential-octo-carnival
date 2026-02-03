@@ -12,14 +12,14 @@ const partners = [
 
 const Partners = () => {
     return (
-        <section id="partners" className="py-24 bg-[#050505] border-t border-white/5">
+        <section id="partners" className="py-24 bg-gray-50 border-t border-gray-200">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-left mb-16">
                     <motion.h3
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="text-amber-500 font-bold tracking-widest uppercase mb-4 text-sm"
+                        className="text-purple-600 font-bold tracking-widest uppercase mb-4 text-sm"
                     >
                         Client
                     </motion.h3>
@@ -27,7 +27,7 @@ const Partners = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-bold"
+                        className="text-3xl md:text-4xl font-bold text-gray-900"
                     >
                         영상 프로젝트를 진행한 <br className="md:hidden" /> 다양한 기관 및 업체들
                     </motion.h2>
@@ -44,7 +44,7 @@ const Partners = () => {
                             className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-500 hover:opacity-100"
                         >
                             {/* Placeholder for Logo - In reality, replace text with <img> */}
-                            <div className="text-gray-500 font-bold text-center border border-white/10 rounded-lg w-full h-24 flex items-center justify-center hover:bg-white/5 hover:text-white transition-colors">
+                            <div className="text-gray-500 font-bold text-center border border-gray-200 rounded-lg w-full h-24 flex items-center justify-center hover:bg-white hover:shadow-md hover:text-purple-600 transition-all bg-white">
                                 {partner}
                             </div>
                         </motion.div>
