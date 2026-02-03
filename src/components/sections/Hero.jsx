@@ -3,10 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 const heroImages = [
-    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=2000", // Event Crowd
-    "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=2000", // Conference
-    "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=2000", // Concert Lights
-    "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=2000"  // Networking
+    "/images/hero/slide1.jpg", // IBK창공 광주 1기 PRE DEMO DAY
+    "/images/hero/slide2.jpg", // 2023 광주 스타트업 페스티벌
+    "/images/hero/slide3.jpg", // IBK창공 광주 2기 PRE DEMO DAY
+    "/images/hero/slide4.jpg", // ESG 포럼
+    "/images/hero/slide5.jpg", // 2025 빛고을 로봇 페스티벌
+    "/images/hero/slide6.jpg", // 소셜임팩트 온스테이지
 ];
 
 const Hero = () => {
