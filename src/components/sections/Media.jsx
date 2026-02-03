@@ -2,129 +2,129 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X, Youtube, Film, ExternalLink } from 'lucide-react';
 
-// YouTube video data with real video IDs
+// YouTube video data with real video IDs and actual titles/descriptions
 const videos = [
-    // 인터뷰 영상
+    // 별별동구 시리즈 (인터뷰 콘텐츠)
     {
         id: 1,
-        title: "금터뷰 시리즈 - 지역 소상공인 인터뷰",
-        category: "인터뷰 콘텐츠",
+        title: "선아리 - 작은 바느질로 이어가는 큰 가치",
+        category: "별별동구 시리즈",
         videoId: "qKt-oz-zEcY",
-        description: "지역 소상공인의 생생한 이야기"
+        description: "친환경 굿즈 제작 전문기업, 봉제 기술을 가진 시니어와 취약계층이 함께하는 책임소비 이야기"
     },
     {
         id: 2,
-        title: "금터뷰 시리즈 - 창업자 인터뷰",
-        category: "인터뷰 콘텐츠",
+        title: "에드업 - 복지와 스포츠를 잇다",
+        category: "별별동구 시리즈",
         videoId: "XoH_C0KMHts",
-        description: "성공 창업가의 노하우 공유"
+        description: "비대면 운동 플랫폼으로 장애인과 취약계층이 운동에 쉽게 접근할 수 있도록 돕는 사회적 가치 실현"
     },
     {
         id: 3,
-        title: "금터뷰 시리즈 - 지역 명인 인터뷰",
-        category: "인터뷰 콘텐츠",
+        title: "더일러스트앤아트 - 그림과 예술로 피워내는 치유",
+        category: "별별동구 시리즈",
         videoId: "zQLmY3yJPn4",
-        description: "지역 명인과의 특별한 대화"
+        description: "보태니컬 아트와 컬러 심리를 접목한 교육·전시·출판으로 생애전환기 시민들에게 치유와 성장 제안"
     },
     {
         id: 4,
-        title: "금터뷰 시리즈 - 사회적기업 인터뷰",
-        category: "인터뷰 콘텐츠",
-        videoId: "1l0AjXWOKkE",
-        description: "사회적 가치를 실현하는 기업가"
+        title: "민들레씨앤비 - 건강한 빵을 만들며 성장하는",
+        category: "별별동구 시리즈",
+        videoId: "19D5gwwxC0s",
+        description: "광주 동구 인증사회적기업 빵글빵글, 속이 편한 빵으로 자립준비청년을 돕는 사회적 가치 창출"
     },
     {
         id: 5,
-        title: "금터뷰 시리즈 - 청년 창업가 인터뷰",
-        category: "인터뷰 콘텐츠",
-        videoId: "5FBjH-1NXnM",
-        description: "청년 창업가의 도전 이야기"
+        title: "행복한쓰임 개소식",
+        category: "별별동구 시리즈",
+        videoId: "MWfnwef9EAE",
+        description: "행복한쓰임협동조합, 선아리, 좋은날에가 함께한 공공 개소식 현장"
     },
     {
         id: 6,
-        title: "금터뷰 시리즈 - 로컬 브랜드 인터뷰",
-        category: "인터뷰 콘텐츠",
-        videoId: "19D5gwwxC0s",
-        description: "로컬 브랜드 성장 스토리"
+        title: "헌혈, 생명을 살리는 아름다운 도전",
+        category: "별별동구 시리즈",
+        videoId: "QN_Dv2WLm5A",
+        description: "건강할 때 헌혈하는 것은 자신과 사랑하는 가족, 모두를 위한 사랑의 실천"
     },
-    // 별별동구 시리즈
+    // 금터뷰 시리즈 (인터뷰 콘텐츠)
     {
         id: 7,
-        title: "별별동구 시즌1 - 동구의 숨은 이야기",
-        category: "별별동구 시리즈",
-        videoId: "MWfnwef9EAE",
-        description: "광주 동구의 다양한 매력 탐방"
+        title: "원인터내셔널 - 마법같은 스마트홈 자동문",
+        category: "인터뷰 콘텐츠",
+        videoId: "1l0AjXWOKkE",
+        description: "반짝반짝 빛날 기업들을 만나는 금터뷰, 스마트홈 자동문과 AI장비 인테리어 전문기업"
     },
     {
         id: 8,
-        title: "별별동구 시즌1 - 로컬 맛집 탐방",
-        category: "별별동구 시리즈",
-        videoId: "Oh2ApM5Fd4k",
-        description: "동구의 숨은 맛집을 찾아서"
-    },
-    {
-        id: 9,
-        title: "별별동구 시즌1 - 문화예술 거리",
-        category: "별별동구 시리즈",
-        videoId: "QN_Dv2WLm5A",
-        description: "동구의 문화예술 현장"
-    },
-    {
-        id: 10,
-        title: "별별동구 시즌1 - 역사 탐방",
-        category: "별별동구 시리즈",
-        videoId: "cmDkUyzuzpg",
-        description: "동구의 역사와 전통"
-    },
-    {
-        id: 11,
-        title: "별별동구 시즌1 - 청년 창업 거리",
-        category: "별별동구 시리즈",
-        videoId: "sYJeTCp4bbE",
-        description: "청년들이 만들어가는 동구"
-    },
-    {
-        id: 12,
-        title: "별별동구 시즌1 - 시장 이야기",
-        category: "별별동구 시리즈",
-        videoId: "6i14yvqsclI",
-        description: "전통시장의 활력과 정"
+        title: "마인스페이스 - AI 인테리어 플랫폼 꾸민(GGUMIN)",
+        category: "인터뷰 콘텐츠",
+        videoId: "5FBjH-1NXnM",
+        description: "2025 CES 혁신상 수상, AI가 인테리어와 쇼핑까지 해주는 공간혁명 플랫폼"
     },
     // 라이브커머스
     {
-        id: 13,
-        title: "라이브커머스 - 지역특산물 판매방송",
+        id: 9,
+        title: "The청정 EM 홈케어 비누세트",
         category: "라이브커머스",
         videoId: "YMgXTmPV9CY",
-        description: "지역 특산물 실시간 판매"
+        description: "유해화학물질 없이 천연 성분으로 만든 친환경 비누, 재활용 오일 수작업 공정"
+    },
+    {
+        id: 10,
+        title: "우리밀스토리 수제쿠키 6종",
+        category: "라이브커머스",
+        videoId: "Oh2ApM5Fd4k",
+        description: "100% 우리밀로 만든 바삭한 수제쿠키 - 오트밀, 검은깨, 녹차, 초코, 호두, 땅콩"
+    },
+    {
+        id: 11,
+        title: "오로라팜투어 - 동건이네농장 추희자두 수확",
+        category: "라이브커머스",
+        videoId: "cmDkUyzuzpg",
+        description: "장성 드넓은 동건이네농장에서 가족 체험과 제철 과일 추희자두 수확"
+    },
+    {
+        id: 12,
+        title: "소소마켓 라이브",
+        category: "라이브커머스",
+        videoId: "sYJeTCp4bbE",
+        description: "광주 북구지역 소상공인들이 함께하는 소소마켓 라이브 방송"
+    },
+    {
+        id: 13,
+        title: "진원골새순묘목농원 분갈이체험",
+        category: "라이브커머스",
+        videoId: "6i14yvqsclI",
+        description: "전남 장성 무늬동백 분갈이 체험, 이색체험을 원하는 분들에게 안성맞춤"
     },
     {
         id: 14,
-        title: "라이브커머스 - 로컬푸드 마켓",
+        title: "보리담은 나주 찰보리빵",
         category: "라이브커머스",
         videoId: "uxlaI1mpUU8",
-        description: "신선한 로컬푸드 라이브"
+        description: "전남여성일자리박람회 현장, 첨가물 없이 건강하게 만든 찰보리빵과 경주빵"
     },
     {
         id: 15,
-        title: "라이브커머스 - 전통시장 특집",
+        title: "2022 광주주류페스타 - 현대 F&B",
         category: "라이브커머스",
         videoId: "A6cnWujHy9k",
-        description: "전통시장 상품 라이브 판매"
+        description: "광주주류페스타 X 아이플렉스 현대 F&B 라이브커머스"
     },
     {
         id: 16,
-        title: "라이브커머스 - 농산물 직거래",
+        title: "2022 광주주류페스타 - 베다라이프",
         category: "라이브커머스",
         videoId: "f8tj22-URV8",
-        description: "농가와 소비자의 직접 연결"
+        description: "광주주류페스타 X 아이플렉스 베다라이프 라이브커머스"
     },
     {
         id: 17,
-        title: "라이브커머스 - 해남 고구마 특집",
+        title: "2022 광주주류페스타 - 리와인드프롬오아시스",
         category: "라이브커머스",
         videoId: "aacNYG7d8oE",
-        description: "해남 고구마 산지직송 라이브"
+        description: "광주주류페스타 X 아이플렉스 리와인드프롬오아시스 라이브커머스"
     },
 ];
 
@@ -132,7 +132,7 @@ const Media = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [activeFilter, setActiveFilter] = useState('전체');
 
-    const categories = ['전체', '인터뷰 콘텐츠', '별별동구 시리즈', '라이브커머스'];
+    const categories = ['전체', '별별동구 시리즈', '인터뷰 콘텐츠', '라이브커머스'];
 
     const filteredVideos = activeFilter === '전체'
         ? videos
@@ -210,8 +210,8 @@ const Media = () => {
                             key={category}
                             onClick={() => setActiveFilter(category)}
                             className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${activeFilter === category
-                                ? 'bg-purple-600 text-white shadow-lg'
-                                : 'bg-white text-gray-600 hover:bg-purple-50 border border-gray-200'
+                                    ? 'bg-purple-600 text-white shadow-lg'
+                                    : 'bg-white text-gray-600 hover:bg-purple-50 border border-gray-200'
                                 }`}
                         >
                             {category}
