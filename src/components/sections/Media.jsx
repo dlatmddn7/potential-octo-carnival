@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, X, Youtube, Film, ExternalLink } from 'lucide-react';
+import { Play, X, Youtube, Film, ExternalLink, Grid3X3, ArrowRight } from 'lucide-react';
 
 // YouTube video data with real video IDs and actual titles/descriptions
 const videos = [
@@ -128,11 +128,46 @@ const videos = [
     },
 ];
 
+// Video Card Component for reuse
+const VideoCard = ({ video, onClick, small = false }) => (
+    <div
+        onClick={() => onClick(video)}
+        className="group cursor-pointer"
+    >
+        <div className={`relative overflow-hidden rounded-xl md:rounded-2xl bg-gray-200 aspect-video shadow-lg`}>
+            <img
+                src={`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`}
+                alt={video.title}
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                <div className={`${small ? 'w-10 h-10 md:w-14 md:h-14' : 'w-14 h-14 md:w-16 md:h-16'} bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl`}>
+                    <Play className={`${small ? 'w-5 h-5 md:w-6 md:h-6' : 'w-6 h-6 md:w-8 md:h-8'} text-purple-600 ml-1`} />
+                </div>
+            </div>
+            <div className="absolute top-2 md:top-4 left-2 md:left-4">
+                <span className="px-2 md:px-3 py-1 bg-purple-600 text-white text-[10px] md:text-xs font-bold rounded-full">
+                    {video.category}
+                </span>
+            </div>
+        </div>
+        <div className="mt-2 md:mt-4">
+            <h3 className={`${small ? 'text-sm md:text-lg' : 'text-base md:text-xl'} font-bold text-gray-900 group-hover:text-purple-600 transition-colors line-clamp-1`}>
+                {video.title}
+            </h3>
+            <p className={`text-gray-500 ${small ? 'text-xs' : 'text-sm'} mt-1 line-clamp-1`}>{video.description}</p>
+        </div>
+    </div>
+);
+
 const Media = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
+    const [showGallery, setShowGallery] = useState(false);
     const [activeFilter, setActiveFilter] = useState('전체');
 
     const categories = ['전체', '지역홍보', '인터뷰 콘텐츠', '라이브커머스', '헌혈캠페인'];
+
+    const previewVideos = videos.slice(0, 3); // Show only 3 on main page
 
     const filteredVideos = activeFilter === '전체'
         ? videos
@@ -145,29 +180,40 @@ const Media = () => {
 
     const closeVideo = () => {
         setSelectedVideo(null);
+        document.body.style.overflow = showGallery ? 'hidden' : 'auto';
+    };
+
+    const openGallery = () => {
+        setShowGallery(true);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeGallery = () => {
+        setShowGallery(false);
+        setActiveFilter('전체');
         document.body.style.overflow = 'auto';
     };
 
     return (
-        <section id="media" className="py-32 bg-gray-50 relative z-10 border-t border-gray-200">
+        <section id="media" className="py-16 md:py-24 bg-gray-50 relative z-10 border-t border-gray-200">
             <div className="max-w-7xl mx-auto px-6">
-                {/* Section Header */}
-                <div className="text-center mb-16">
+                {/* Section Header - Compact */}
+                <div className="text-center mb-8 md:mb-12">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-200 bg-purple-50 mb-6"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-200 bg-purple-50 mb-4"
                     >
-                        <Film className="w-5 h-5 text-purple-600" />
-                        <span className="text-sm text-purple-700 font-bold">Media Gallery</span>
+                        <Film className="w-4 h-4 text-purple-600" />
+                        <span className="text-xs text-purple-700 font-bold">Media Gallery</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+                        className="text-2xl md:text-4xl font-bold text-gray-900 mb-2"
                     >
                         우리가 만든 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">영상 콘텐츠</span>
                     </motion.h2>
@@ -176,97 +222,125 @@ const Media = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-gray-500 max-w-2xl mx-auto"
+                        className="text-gray-500 text-sm md:text-base max-w-xl mx-auto"
                     >
-                        비제로스튜디오가 기획하고 제작한 다양한 영상 콘텐츠를 확인하세요.
+                        비제로스튜디오가 기획하고 제작한 다양한 영상 콘텐츠
                     </motion.p>
-
-                    {/* YouTube Channel Link */}
-                    <motion.a
-                        href="https://www.youtube.com/channel/UCRWdx-ktiMVTAg-FLCfN-8g"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
-                        className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-red-600 text-white rounded-full font-bold hover:bg-red-700 transition-colors"
-                    >
-                        <Youtube className="w-5 h-5" />
-                        유튜브 채널 바로가기
-                        <ExternalLink className="w-4 h-4" />
-                    </motion.a>
                 </div>
 
-                {/* Category Filters */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="flex flex-wrap justify-center gap-3 mb-12"
-                >
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => setActiveFilter(category)}
-                            className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${activeFilter === category
-                                ? 'bg-purple-600 text-white shadow-lg'
-                                : 'bg-white text-gray-600 hover:bg-purple-50 border border-gray-200'
-                                }`}
-                        >
-                            {category}
-                        </button>
-                    ))}
-                </motion.div>
-
-                {/* Video Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredVideos.map((video, index) => (
+                {/* Preview Video Grid - 3 Videos Only */}
+                <div className="grid grid-cols-3 gap-3 md:gap-6 mb-8">
+                    {previewVideos.map((video, index) => (
                         <motion.div
                             key={video.id}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.05 }}
-                            onClick={() => openVideo(video)}
-                            className="group cursor-pointer"
+                            transition={{ delay: index * 0.1 }}
                         >
-                            <div className="relative overflow-hidden rounded-2xl bg-gray-200 aspect-video shadow-lg">
-                                <img
-                                    src={`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`}
-                                    alt={video.title}
-                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                                />
-                                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                                    <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
-                                        <Play className="w-8 h-8 text-purple-600 ml-1" />
-                                    </div>
-                                </div>
-                                <div className="absolute top-4 left-4">
-                                    <span className="px-3 py-1 bg-purple-600 text-white text-xs font-bold rounded-full">
-                                        {video.category}
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="mt-4">
-                                <h3 className="text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
-                                    {video.title}
-                                </h3>
-                                <p className="text-gray-500 text-sm mt-1">{video.description}</p>
-                            </div>
+                            <VideoCard video={video} onClick={openVideo} small={true} />
                         </motion.div>
                     ))}
                 </div>
+
+                {/* View All Button */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="flex justify-center gap-4"
+                >
+                    <button
+                        onClick={openGallery}
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-full font-bold hover:bg-purple-700 transition-colors shadow-lg"
+                    >
+                        <Grid3X3 className="w-5 h-5" />
+                        전체 영상 보기 ({videos.length}개)
+                        <ArrowRight className="w-4 h-4" />
+                    </button>
+                    <a
+                        href="https://www.youtube.com/channel/UCRWdx-ktiMVTAg-FLCfN-8g"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-full font-bold hover:bg-red-700 transition-colors"
+                    >
+                        <Youtube className="w-5 h-5" />
+                        유튜브 채널
+                    </a>
+                </motion.div>
             </div>
 
-            {/* Video Modal */}
+            {/* Full Gallery Modal */}
+            <AnimatePresence>
+                {showGallery && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-white z-50 overflow-y-auto"
+                    >
+                        {/* Gallery Header */}
+                        <div className="sticky top-0 bg-white/95 backdrop-blur-md border-b border-gray-200 z-10">
+                            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                                <div className="flex items-center gap-3">
+                                    <Film className="w-6 h-6 text-purple-600" />
+                                    <h2 className="text-xl md:text-2xl font-bold text-gray-900">영상 갤러리</h2>
+                                    <span className="text-sm text-gray-500">({filteredVideos.length}개)</span>
+                                </div>
+                                <button
+                                    onClick={closeGallery}
+                                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                                >
+                                    <X className="w-6 h-6 text-gray-600" />
+                                </button>
+                            </div>
+
+                            {/* Category Filters */}
+                            <div className="max-w-7xl mx-auto px-6 pb-4">
+                                <div className="flex flex-wrap gap-2">
+                                    {categories.map((category) => (
+                                        <button
+                                            key={category}
+                                            onClick={() => setActiveFilter(category)}
+                                            className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${activeFilter === category
+                                                ? 'bg-purple-600 text-white shadow-lg'
+                                                : 'bg-gray-100 text-gray-600 hover:bg-purple-50'
+                                                }`}
+                                        >
+                                            {category}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Gallery Grid */}
+                        <div className="max-w-7xl mx-auto px-6 py-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                                {filteredVideos.map((video, index) => (
+                                    <motion.div
+                                        key={video.id}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: index * 0.03 }}
+                                    >
+                                        <VideoCard video={video} onClick={openVideo} />
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Video Player Modal */}
             <AnimatePresence>
                 {selectedVideo && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+                        className="fixed inset-0 bg-black/90 z-[60] flex items-center justify-center p-4"
                         onClick={closeVideo}
                     >
                         <button
@@ -298,3 +372,4 @@ const Media = () => {
 };
 
 export default Media;
+
