@@ -29,7 +29,7 @@ const Hero = () => {
     };
 
     return (
-        <section id="home" className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center pt-16 md:pt-20 overflow-hidden">
+        <section id="home" className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center pt-16 pb-20 md:pt-20 md:pb-0 overflow-hidden">
             {/* Background Slideshow */}
             <div className="absolute inset-0 z-0">
                 <AnimatePresence mode="wait">
@@ -112,7 +112,7 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10"
+                className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10 hidden md:block"
             >
                 <div className="w-6 h-10 rounded-full border-2 border-gray-400/50 flex items-start justify-center p-1 backdrop-blur-sm">
                     <div className="w-1 h-2 bg-gray-500/50 rounded-full" />
