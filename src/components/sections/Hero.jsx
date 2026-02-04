@@ -56,28 +56,39 @@ const Hero = () => {
 
             {/* Content */}
             <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+                {/* Main Title - Large Bold Sans-serif */}
                 <motion.h1
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-3xl sm:text-5xl md:text-8xl font-black tracking-tighter leading-none mb-4 md:mb-8 drop-shadow-2xl"
+                    className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tight leading-none mb-4 md:mb-6 drop-shadow-2xl text-white"
+                    style={{ fontFamily: "'Inter', 'Pretendard', sans-serif" }}
                 >
-                    <span className="block text-gray-300/80 text-lg sm:text-2xl md:text-5xl mb-2 md:mb-4 font-bold tracking-normal">
-                        당신의 수고로움을
-                    </span>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-white to-pink-400">
-                        BEZERO 하다.
-                    </span>
+                    Start from Zero,<br />
+                    Create Infinite.
                 </motion.h1>
 
+                {/* Subtitle - Serif style with BEZERO highlight */}
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.35 }}
+                    className="text-xl sm:text-2xl md:text-3xl mb-6 md:mb-10 drop-shadow-lg text-gray-200"
+                    style={{ fontFamily: "'Noto Serif KR', 'Georgia', serif" }}
+                >
+                    당신의 수고로움을 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-bold">BEZERO</span> 하다.
+                </motion.h2>
+
+                {/* Description - Value proposition */}
                 <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-sm md:text-xl text-gray-300 max-w-2xl mx-auto mb-6 md:mb-12 leading-relaxed drop-shadow-lg"
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed drop-shadow-lg"
                 >
-                    비제로스튜디오는 <span className="text-white font-bold">기획, 연출, 운영, 컨설팅</span>까지<br className="hidden md:block" />
-                    비즈니스의 성공을 위한 크리에이티브 올인원 솔루션을 제공합니다.
+                    <span className="block mb-2 text-white font-semibold text-base md:text-lg">상상 그 이상의 현장, 비제로스튜디오가 기획합니다.</span>
+                    기획, 연출, 운영, 컨설팅까지 —<br />
+                    비즈니스의 성공을 위한 크리에이티브 올인원 솔루션을 경험하세요.
                 </motion.p>
 
                 <motion.div
