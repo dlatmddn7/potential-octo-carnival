@@ -204,6 +204,20 @@ const Venue = () => {
     const [openIndex, setOpenIndex] = useState(0);
     const [showGallery, setShowGallery] = useState(false);
     const [galleryOpenIndex, setGalleryOpenIndex] = useState(0);
+    const [activeFilter, setActiveFilter] = useState('전체');
+
+    const categories = ['전체', 'Premium', 'Unique', 'Public', 'Tech'];
+    const categoryLabels = {
+        '전체': '전체',
+        'Premium': 'Premium & Business',
+        'Unique': 'Unique & Creative',
+        'Public': 'Public & Reasonable',
+        'Tech': 'Tech & Startup'
+    };
+
+    const filteredVenues = activeFilter === '전체'
+        ? venues
+        : venues.filter(v => v.category === activeFilter);
 
     const previewVenues = venues.slice(0, 2); // Show only 2 on main page
 
@@ -318,19 +332,36 @@ const Venue = () => {
 
                                 {/* Gallery Header */}
                                 <div className="sticky top-0 bg-white border-b border-gray-200 z-10">
-                                    <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-                                        <div className="flex items-center gap-3">
-                                            <button
-                                                onClick={closeGallery}
-                                                className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full font-bold text-gray-700 transition-colors"
-                                            >
-                                                ← 홈으로 돌아가기
-                                            </button>
+                                    <div className="max-w-5xl mx-auto px-6 py-4">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <div className="flex items-center gap-3">
+                                                <button
+                                                    onClick={closeGallery}
+                                                    className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full font-bold text-gray-700 transition-colors"
+                                                >
+                                                    ← 홈으로 돌아가기
+                                                </button>
+                                            </div>
+                                            <div className="flex items-center gap-3">
+                                                <Building2 className="w-5 h-5 text-purple-600" />
+                                                <h2 className="text-lg md:text-xl font-bold text-gray-900">베뉴 리스트</h2>
+                                                <span className="text-sm text-gray-500">({filteredVenues.length}개)</span>
+                                            </div>
                                         </div>
-                                        <div className="flex items-center gap-3">
-                                            <Building2 className="w-5 h-5 text-purple-600" />
-                                            <h2 className="text-lg md:text-xl font-bold text-gray-900">베뉴 리스트</h2>
-                                            <span className="text-sm text-gray-500">({venues.length}개)</span>
+                                        {/* Category Filter Tabs */}
+                                        <div className="flex flex-wrap gap-2">
+                                            {categories.map((cat) => (
+                                                <button
+                                                    key={cat}
+                                                    onClick={() => { setActiveFilter(cat); setGalleryOpenIndex(-1); }}
+                                                    className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${activeFilter === cat
+                                                        ? 'bg-purple-600 text-white shadow-lg'
+                                                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                                        }`}
+                                                >
+                                                    {categoryLabels[cat]}
+                                                </button>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
@@ -338,7 +369,7 @@ const Venue = () => {
                                 {/* Gallery Content */}
                                 <div className="max-w-5xl mx-auto px-6 py-8 pb-24 min-h-screen">
                                     <div className="flex flex-col gap-4">
-                                        {venues.map((venue, index) => (
+                                        {filteredVenues.map((venue, index) => (
                                             <VenueCard
                                                 key={index}
                                                 venue={venue}
