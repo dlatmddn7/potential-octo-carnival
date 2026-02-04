@@ -12,9 +12,9 @@ const partners = [
 
 const Partners = () => {
     return (
-        <section id="partners" className="py-24 bg-gray-50 border-t border-gray-200">
+        <section id="partners" className="py-12 md:py-24 bg-gray-50 border-t border-gray-200">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="text-left mb-16">
+                <div className="text-left mb-8 md:mb-16">
                     <motion.h3
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -27,13 +27,13 @@ const Partners = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-bold text-gray-900"
+                        className="text-xl md:text-4xl font-bold text-gray-900"
                     >
                         행사 프로젝트를 진행한 <br className="md:hidden" /> 다양한 기관 및 업체들
                     </motion.h2>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 opacity-70">
+                <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-8 opacity-70">
                     {partners.map((partner, index) => (
                         <motion.div
                             key={index}
@@ -41,10 +41,10 @@ const Partners = () => {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05 }}
-                            className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-500 hover:opacity-100"
+                            className="flex items-center justify-center p-1 md:p-4 grayscale hover:grayscale-0 transition-all duration-500 hover:opacity-100"
                         >
                             {/* Placeholder for Logo - In reality, replace text with <img> */}
-                            <div className="text-gray-500 font-bold text-center border border-gray-200 rounded-lg w-full h-24 flex items-center justify-center hover:bg-white hover:shadow-md hover:text-purple-600 transition-all bg-white">
+                            <div className="text-gray-500 font-bold text-center border border-gray-200 rounded-lg w-full h-12 md:h-24 flex items-center justify-center hover:bg-white hover:shadow-md hover:text-purple-600 transition-all bg-white text-[8px] md:text-sm px-1">
                                 {partner}
                             </div>
                         </motion.div>
