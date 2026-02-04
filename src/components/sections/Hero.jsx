@@ -87,9 +87,9 @@ const Hero = () => {
                     className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-8 md:mb-12 leading-loose drop-shadow-lg"
                     style={{ fontFamily: "'Pretendard', 'Noto Sans KR', sans-serif" }}
                 >
-                    상상 그 이상의 현장, 비제로스튜디오가 기획합니다.<br className="hidden sm:block" />
-                    기획, 연출, 운영, 컨설팅까지 —<br />
-                    비즈니스의 성공을 위한 크리에이티브 올인원 솔루션을 경험하세요.
+                    <span className="block font-bold text-white mb-4">상상 그 이상의 현장, 비제로스튜디오가 기획합니다.</span>
+                    기획, 연출, 운영, 컨설팅까지 비즈니스의 성공을 위한<br />
+                    크리에이티브 올인원 솔루션을 경험하세요.
                 </motion.p>
 
                 <motion.div
