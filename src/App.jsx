@@ -37,14 +37,14 @@ function App() {
               <span>Address: 204, 150, Donggyecheon-ro, Dong-gu, Gwangju, Republic of Korea</span>
             </div>
             <div className="flex flex-col md:flex-row gap-2 md:gap-8">
-              <span>CS: 0507-1358-5024 (AM9-PM8)</span>
-              <span>E: pdlauncher@naver.com</span>
+              <span>CS: 062-229-3060 (AM10-PM5)</span>
+              <span>E: bezero2021@naver.com</span>
               <span>Hosting By. BEZERO STUDIO Inc.</span>
               <span>CEO: Jeong Se-yun</span>
             </div>
           </div>
           <div className="text-right w-full md:w-auto">
-            <p className="font-bold text-gray-400">It will be a "Launcher" that realizes corporate value.</p>
+            <p className="font-bold text-gray-400">Start from Zero, Create Infinite.</p>
           </div>
         </div>
       </footer>
