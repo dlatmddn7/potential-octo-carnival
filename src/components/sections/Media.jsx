@@ -277,30 +277,32 @@ const Media = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-white z-[100] overflow-y-auto"
+                        className="fixed inset-0 bg-white z-[200] overflow-y-auto"
                     >
                         {/* Fixed Close Button - Always Visible */}
                         <button
                             onClick={closeGallery}
-                            className="fixed top-4 right-4 z-20 p-3 bg-gray-900 hover:bg-gray-800 rounded-full transition-colors shadow-lg"
+                            className="fixed top-20 right-4 z-[210] p-3 bg-gray-900 hover:bg-gray-800 rounded-full transition-colors shadow-lg"
                         >
                             <X className="w-6 h-6 text-white" />
                         </button>
 
                         {/* Gallery Header */}
-                        <div className="sticky top-0 bg-white/95 backdrop-blur-md border-b border-gray-200 z-10">
+                        <div className="sticky top-0 bg-white border-b border-gray-200 z-10">
                             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
                                 <div className="flex items-center gap-3">
-                                    <Film className="w-6 h-6 text-purple-600" />
-                                    <h2 className="text-xl md:text-2xl font-bold text-gray-900">영상 갤러리</h2>
+                                    <button
+                                        onClick={closeGallery}
+                                        className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full font-bold text-gray-700 transition-colors"
+                                    >
+                                        ← 홈으로 돌아가기
+                                    </button>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <Film className="w-5 h-5 text-purple-600" />
+                                    <h2 className="text-lg md:text-xl font-bold text-gray-900">영상 갤러리</h2>
                                     <span className="text-sm text-gray-500">({filteredVideos.length}개)</span>
                                 </div>
-                                <button
-                                    onClick={closeGallery}
-                                    className="hidden md:flex p-2 hover:bg-gray-100 rounded-full transition-colors"
-                                >
-                                    <X className="w-6 h-6 text-gray-600" />
-                                </button>
                             </div>
 
                             {/* Category Filters */}
