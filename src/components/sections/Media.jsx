@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X, Youtube, Film, ExternalLink, Grid3X3, ArrowRight } from 'lucide-react';
 
@@ -447,78 +448,83 @@ const Media = () => {
                 </motion.div>
             </div>
 
-            {/* Full Gallery Modal */}
-            <AnimatePresence>
-                {showGallery && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-white z-[200] overflow-y-auto"
-                    >
-                        {/* Fixed Close Button - Always Visible */}
-                        <button
-                            onClick={closeGallery}
-                            className="fixed top-20 right-4 z-[210] p-3 bg-gray-900 hover:bg-gray-800 rounded-full transition-colors shadow-lg"
+            {/* Full Gallery Modal - Portal to body for z-index isolation */}
+            {ReactDOM.createPortal(
+                <AnimatePresence>
+                    {showGallery && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed top-0 left-0 right-0 bottom-0 bg-white z-[9999] overflow-y-auto"
                         >
-                            <X className="w-6 h-6 text-white" />
-                        </button>
+                            <div className="min-h-screen bg-white">
+                                {/* Fixed Close Button - Always Visible */}
+                                <button
+                                    onClick={closeGallery}
+                                    className="fixed top-20 right-4 z-[210] p-3 bg-gray-900 hover:bg-gray-800 rounded-full transition-colors shadow-lg"
+                                >
+                                    <X className="w-6 h-6 text-white" />
+                                </button>
 
-                        {/* Gallery Header */}
-                        <div className="sticky top-0 bg-white border-b border-gray-200 z-10">
-                            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                                <div className="flex items-center gap-3">
-                                    <button
-                                        onClick={closeGallery}
-                                        className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full font-bold text-gray-700 transition-colors"
-                                    >
-                                        ← 홈으로 돌아가기
-                                    </button>
+                                {/* Gallery Header */}
+                                <div className="sticky top-0 bg-white border-b border-gray-200 z-10">
+                                    <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                                        <div className="flex items-center gap-3">
+                                            <button
+                                                onClick={closeGallery}
+                                                className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full font-bold text-gray-700 transition-colors"
+                                            >
+                                                ← 홈으로 돌아가기
+                                            </button>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <Film className="w-5 h-5 text-purple-600" />
+                                            <h2 className="text-lg md:text-xl font-bold text-gray-900">영상 갤러리</h2>
+                                            <span className="text-sm text-gray-500">({filteredVideos.length}개)</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Category Filters */}
+                                    <div className="max-w-7xl mx-auto px-6 pb-4">
+                                        <div className="flex flex-wrap gap-2">
+                                            {categories.map((category) => (
+                                                <button
+                                                    key={category}
+                                                    onClick={() => setActiveFilter(category)}
+                                                    className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${activeFilter === category
+                                                        ? 'bg-purple-600 text-white shadow-lg'
+                                                        : 'bg-gray-100 text-gray-600 hover:bg-purple-50'
+                                                        }`}
+                                                >
+                                                    {category}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <Film className="w-5 h-5 text-purple-600" />
-                                    <h2 className="text-lg md:text-xl font-bold text-gray-900">영상 갤러리</h2>
-                                    <span className="text-sm text-gray-500">({filteredVideos.length}개)</span>
+
+                                {/* Gallery Grid */}
+                                <div className="max-w-7xl mx-auto px-6 py-8">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                                        {filteredVideos.map((video, index) => (
+                                            <motion.div
+                                                key={video.id}
+                                                initial={{ opacity: 0, y: 20 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{ delay: index * 0.03 }}
+                                            >
+                                                <VideoCard video={video} onClick={openVideo} />
+                                            </motion.div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-
-                            {/* Category Filters */}
-                            <div className="max-w-7xl mx-auto px-6 pb-4">
-                                <div className="flex flex-wrap gap-2">
-                                    {categories.map((category) => (
-                                        <button
-                                            key={category}
-                                            onClick={() => setActiveFilter(category)}
-                                            className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${activeFilter === category
-                                                ? 'bg-purple-600 text-white shadow-lg'
-                                                : 'bg-gray-100 text-gray-600 hover:bg-purple-50'
-                                                }`}
-                                        >
-                                            {category}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Gallery Grid */}
-                        <div className="max-w-7xl mx-auto px-6 py-8">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                                {filteredVideos.map((video, index) => (
-                                    <motion.div
-                                        key={video.id}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: index * 0.03 }}
-                                    >
-                                        <VideoCard video={video} onClick={openVideo} />
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                        </motion.div>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
 
             {/* Video Player Modal */}
             <AnimatePresence>
@@ -557,7 +563,7 @@ const Media = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </section>
+        </section >
     );
 };
 
