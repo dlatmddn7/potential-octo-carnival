@@ -4,79 +4,133 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, ChevronRight, Users, CheckCircle, X, Grid3X3, ArrowRight, Building2 } from 'lucide-react';
 
 const venues = [
-    // 기존 베뉴
+    // ========================================
+    // 1. Premium & Business (호텔/컨벤션)
+    // 격식 있는 이사회, 외부 VIP 초청, 연회 동반 행사
+    // ========================================
     {
-        title: 'KDJ Convention Center',
-        location: '광주 서구 상무누리로 30',
-        capacity: 'Max 3,000 People',
-        category: '대규모',
-        features: ['대규모 컨퍼런스', '국제회의 시설', '편리한 주차', 'VIP 대기실']
-    },
-    {
-        title: 'Gwangju Content Cube',
-        location: '광주 남구 송암로 60',
-        capacity: '100~300 People',
-        category: '대규모',
-        features: ['실감형 미디어 장비', '하이브리드 행사', '스튜디오 시설', '최신 음향/조명']
-    },
-    {
-        title: 'I-PLEX Gwangju',
-        location: '광주 동구 동계천로 150',
-        capacity: '50~100 People',
-        category: '비즈니스',
-        features: ['스타트업 행사 특화', '합리적인 대관료', '코워킹 스페이스', '동명동 인접']
-    },
-    // 비즈니스 중심 (전문 시설 및 호텔)
-    {
-        title: '아이와즈 (수완지구)',
-        location: '광주 광산구 수완지구',
-        capacity: '15~50 People',
-        category: '비즈니스',
-        features: ['LED 풀스크린 세미나실', '케이터링 올인원 서비스', '현대적 인테리어', '전용 주차장']
-    },
-    {
-        title: '홀리데이인 광주호텔',
+        title: '홀리데이 인 광주',
         location: '광주 서구 상무지구',
-        capacity: 'Max 80 People',
-        category: '비즈니스',
-        features: ['호텔급 서비스', '강력한 음향/영상 장비', '상무지구 접근성', '학회/세미나 적합']
+        capacity: '20~300명',
+        category: 'Premium',
+        features: ['글로벌 체인 호텔', '외빈 응대 최적화', '케이터링 품질 우수', '소규모~대형 컨벤션홀'],
+        link: 'https://higwangju.com/index.php?cate=005'
     },
+    {
+        title: '라마다플라자 광주',
+        location: '광주 서구 상무지구',
+        capacity: '30~500명',
+        category: 'Premium',
+        features: ['상무지구 중심 위치', '교통 접근성 우수', '중소연회장 다양', '인원맞춤 공간'],
+        link: 'https://www.ramadagwangju.com/banquet/meeting.php'
+    },
+    {
+        title: '유탑부티크호텔',
+        location: '광주 서구 상무지구',
+        capacity: '50~100명',
+        category: 'Premium',
+        features: ['신축 깔끔한 시설', '레지던스형 호텔', '숙박 연계 워크숍', '연회장 예약 가능'],
+        link: 'https://www.utopboutique.com'
+    },
+    {
+        title: '김대중컨벤션센터',
+        location: '광주 서구 상무지구',
+        capacity: '10~수천명',
+        category: 'Premium',
+        features: ['호남 최대 규모', '회의실 크기별 세분화', '소규모 미팅 가능', '전시 연계 행사'],
+        link: 'https://www.kdjcenter.or.kr'
+    },
+    // ========================================
+    // 2. Unique & Creative (복합문화공간)
+    // 브랜드 런칭, 네트워킹 파티, 창의적 워크숍
+    // ========================================
+    {
+        title: '어반브룩 (Urban Brook)',
+        location: '광주 남구 임암동',
+        capacity: '30~100명',
+        category: 'Unique',
+        features: ['코리아 유니크 베뉴 선정', '자연 채광 우수', '포르쉐/롤스로이스 VIP 행사', '스몰 럭셔리 이벤트'],
+        link: 'http://urbanbrook.co.kr/biz'
+    },
+    {
+        title: '라운지 OIC',
+        location: '광주 광산구 첨단',
+        capacity: '50~100명+',
+        category: 'Unique',
+        features: ["'Oasis In The City' 컨셉", '대형 스크린 & 무대', '공연 포함 파티 최적', 'F&B 매출 보장 조건'],
+        link: 'https://glowseoul.co.kr/portfolio/lounge-oic/'
+    },
+    {
+        title: 'ACC (국립아시아문화전당)',
+        location: '광주 동구 충장로',
+        capacity: '10~500명',
+        category: 'Unique',
+        features: ['광주 대표 랜드마크', '예술적 분위기', '최첨단 회의 시설', '극장/야외 활용 가능'],
+        link: 'https://www.acc.go.kr/main/contents.do?PID=040201'
+    },
+    {
+        title: '광주전통문화관',
+        location: '광주 동구 무등산',
+        capacity: '10~50명',
+        category: 'Unique',
+        features: ['한옥 공간 (서석당, 입석당)', '이색 회의 분위기', '외국인 바이어 접견 추천', '좌식/입식 확인 필요'],
+        link: 'https://www.gjcf.or.kr/cf/intro/rent.do'
+    },
+    // ========================================
+    // 3. Public & Reasonable (공공/가성비)
+    // 실무 교육, 세미나, 사업설명회
+    // ========================================
     {
         title: '광주디자인진흥원',
         location: '광주 북구 첨단',
-        capacity: '15~50 People',
-        category: '비즈니스',
-        features: ['합리적인 대관료', '공공기관 시설', '시설 관리 우수', '중규모/대규모 선택']
-    },
-    // 유니크 베뉴 (감성 및 문화 공간)
-    {
-        title: 'ACC (국립아시아문화전당)',
-        location: '광주 동구 문화전당로 38',
-        capacity: 'Max 500 People',
-        category: '유니크',
-        features: ['광주 대표 랜드마크', '16개 중소 회의실', '행사 상징성 부여', '다양한 공간 옵션']
+        capacity: '30~200명',
+        category: 'Public',
+        features: ['디자인/IT 행사 적합', '대회의실(4층) 장비 양호', '공공기관 합리적 요금', '세미나실 보유'],
+        link: 'https://www.gdc.or.kr/contents.do?S=S01&M=0201020000'
     },
     {
-        title: '전통문화관 (무등산)',
-        location: '광주 무등산 인근',
-        capacity: 'Various Options',
-        category: '유니크',
-        features: ['한옥 공간 (서석당, 입석당)', '고즈넉한 분위기', '한옥 스테이 가능', '전통 체험 연계']
+        title: '광주상공회의소',
+        location: '광주 서구 농성동',
+        capacity: '30~150명',
+        category: 'Public',
+        features: ['전통적 기업 행사 메카', '교통 요지 위치', '지하 교육장', '7층 대회의실'],
+        link: 'http://www.gjcci.or.kr/user/sub501020'
     },
-    // 실속형 및 공유 공간
     {
         title: '광주 공유센터',
         location: '광주 남구 진월동',
-        capacity: '10~30 People',
-        category: '실속형',
-        features: ['무료/저렴한 대관', '빔프로젝터/노트북 대여', '쾌적한 주차', '소규모 워크숍 적합']
+        capacity: '10~50명',
+        category: 'Public',
+        features: ['무료/저렴한 대관', '빔프로젝터/노트북 대여', '예약 경쟁 있음', '상업적 행사 제한'],
+        link: 'http://www.sharegj.kr/'
+    },
+    // ========================================
+    // 4. Tech & Startup (기술/창업 특화)
+    // 해커톤, 데모데이, 스타트업 네트워킹
+    // ========================================
+    {
+        title: 'I-Plex 광주',
+        location: '광주 동구 동명동',
+        capacity: '10~100명',
+        category: 'Tech',
+        features: ['스타트업 허브 이미지', 'IP/창업 행사 최적', '주차 협소 (대중교통 권장)', '코워킹 스페이스'],
+        link: 'https://www.iplexgj.com'
     },
     {
-        title: '광주청년센터',
-        location: '광주 동구 충장로',
-        capacity: '3~10 People',
-        category: '실속형',
-        features: ['시내 중심가 위치', '소모임실/중회의실', '청년 대상 행사', '가벼운 미팅 적합']
+        title: '광주 AI 창업캠프',
+        location: '광주 동구 금남로',
+        capacity: '10~50명',
+        category: 'Tech',
+        features: ['AI/Tech 상징적 장소', '입주/협약 기업 우선', '전화 문의 필수', '첨단 장비 보유'],
+        link: 'https://www.bizinfo.go.kr'
+    },
+    {
+        title: '광주실감콘텐츠큐브 (GCC)',
+        location: '광주 남구 송암동',
+        capacity: '다양함',
+        category: 'Tech',
+        features: ['최신 실감형 스튜디오', '메타버스/XR 시연 독보적', '콘텐츠 제작 특화', '행사장 보유'],
+        link: 'https://www.gicon.or.kr/menu.es?mid=a11003030000'
     },
 ];
 
