@@ -198,7 +198,7 @@ const Venue = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-white z-[200] overflow-y-auto"
+                        className="fixed inset-0 bg-white z-[200] overflow-y-auto min-h-screen"
                     >
                         {/* Fixed Close Button */}
                         <button
@@ -228,7 +228,7 @@ const Venue = () => {
                         </div>
 
                         {/* Gallery Content */}
-                        <div className="max-w-5xl mx-auto px-6 py-8">
+                        <div className="max-w-5xl mx-auto px-6 py-8 pb-24 min-h-screen">
                             <div className="flex flex-col gap-4">
                                 {venues.map((venue, index) => (
                                     <VenueCard
