@@ -29,7 +29,7 @@ const Hero = () => {
     };
 
     return (
-        <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <section id="home" className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center pt-16 md:pt-20 overflow-hidden">
             {/* Background Slideshow */}
             <div className="absolute inset-0 z-0">
                 <AnimatePresence mode="wait">
@@ -74,9 +74,9 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-5xl md:text-8xl font-black tracking-tighter leading-none mb-8 drop-shadow-2xl"
+                    className="text-3xl sm:text-5xl md:text-8xl font-black tracking-tighter leading-none mb-4 md:mb-8 drop-shadow-2xl"
                 >
-                    <span className="block text-gray-300/80 text-3xl md:text-5xl mb-4 font-bold tracking-normal">
+                    <span className="block text-gray-300/80 text-lg sm:text-2xl md:text-5xl mb-2 md:mb-4 font-bold tracking-normal">
                         당신의 수고로움을
                     </span>
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-white to-pink-400">
@@ -88,7 +88,7 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed drop-shadow-lg"
+                    className="text-sm md:text-xl text-gray-300 max-w-2xl mx-auto mb-6 md:mb-12 leading-relaxed drop-shadow-lg"
                 >
                     비제로스튜디오는 <span className="text-white font-bold">기획, 연출, 운영, 컨설팅</span>까지<br className="hidden md:block" />
                     비즈니스의 성공을 위한 크리에이티브 올인원 솔루션을 제공합니다.

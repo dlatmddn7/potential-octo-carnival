@@ -56,7 +56,7 @@ const AIPlanning = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-3xl md:text-5xl font-bold mb-4 text-gray-900"
+                        className="text-3xl md:text-5xl font-bold mb-4 text-gray-900 md:whitespace-nowrap"
                     >
                         당신의 아이디어를 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">AI와 함께</span> 구체화하세요
                     </motion.h2>

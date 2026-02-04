@@ -25,25 +25,25 @@ const services = [
 
 const Services = () => {
     return (
-        <section id="services" className="py-32 bg-white relative">
+        <section id="services" className="py-16 md:py-32 bg-white relative">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-20"
+                    className="text-center mb-10 md:mb-20"
                 >
                     <h2 className="text-sm font-bold tracking-widest text-purple-600 mb-3 uppercase">Our Capabilities</h2>
-                    <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+                    <h3 className="text-2xl md:text-5xl font-black text-gray-900 mb-4 md:mb-6">
                         Expertise Area
                     </h3>
-                    <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-gray-500 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
                         기획부터 디자인, 운영까지. <br className="hidden md:block" />
                         성공적인 비즈니스를 위한 최적의 파트너입니다.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -51,16 +51,16 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-xl hover:shadow-purple-100/50 hover:border-purple-200 transition-all duration-500 cursor-pointer flex flex-col h-[420px] relative overflow-hidden"
+                            className="group p-4 md:p-8 rounded-2xl md:rounded-3xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-xl hover:shadow-purple-100/50 hover:border-purple-200 transition-all duration-500 cursor-pointer flex flex-col h-auto md:h-[420px] relative overflow-hidden"
                         >
-                            <div className="mb-8 p-4 bg-white rounded-2xl w-fit shadow-sm group-hover:scale-110 transition-transform duration-300">
+                            <div className="mb-4 md:mb-8 p-3 md:p-4 bg-white rounded-xl md:rounded-2xl w-fit shadow-sm group-hover:scale-110 transition-transform duration-300">
                                 {React.cloneElement(service.icon, { size: 32 })}
                             </div>
 
-                            <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-purple-700 transition-colors">
+                            <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-4 text-gray-900 group-hover:text-purple-700 transition-colors">
                                 {service.title}
                             </h3>
-                            <p className="text-gray-500 mb-8 leading-relaxed">
+                            <p className="text-gray-500 mb-4 md:mb-8 leading-relaxed text-sm md:text-base">
                                 {service.desc}
                             </p>
 

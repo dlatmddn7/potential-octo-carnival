@@ -109,20 +109,20 @@ const Portfolio = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
 
     return (
-        <section id="portfolio" className="py-32 bg-white relative z-10 overflow-hidden">
+        <section id="portfolio" className="py-16 md:py-32 bg-white relative z-10 overflow-hidden">
             {/* Background Gradients */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-100/50 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-                <div className="flex items-center justify-between mb-20">
+                <div className="flex items-center justify-between mb-8 md:mb-20">
                     <div className="flex items-center gap-4">
                         <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
                         <h2 className="text-sm font-bold tracking-[0.2em] text-primary uppercase">Selected Works</h2>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.id}
@@ -130,7 +130,7 @@ const Portfolio = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group relative h-[500px] w-full overflow-hidden rounded-2xl cursor-pointer bg-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300"
+                            className="group relative h-[200px] md:h-[500px] w-full overflow-hidden rounded-xl md:rounded-2xl cursor-pointer bg-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300"
                             onClick={() => project.video && setSelectedVideo(project.video)}
                         >
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500 z-10" />
@@ -149,15 +149,15 @@ const Portfolio = () => {
                                 </div>
                             )}
 
-                            <div className="absolute inset-0 p-8 flex flex-col justify-end z-20">
+                            <div className="absolute inset-0 p-3 md:p-8 flex flex-col justify-end z-20">
                                 <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                                     <div className="flex items-center gap-2 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                         <span className="w-8 h-[1px] bg-white"></span>
                                         <span className="text-white/90 text-xs font-bold tracking-widest uppercase">{project.category}</span>
                                     </div>
-                                    <h3 className="text-white text-2xl font-bold leading-tight mb-4">{project.title}</h3>
+                                    <h3 className="text-white text-xs md:text-2xl font-bold leading-tight mb-1 md:mb-4">{project.title}</h3>
 
-                                    <div className="space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                                    <div className="hidden md:block space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                                         <p className="text-white/80 text-sm line-clamp-2">{project.description}</p>
                                         <div className="flex flex-wrap gap-2 text-[10px] text-white/70 pt-2 border-t border-white/20">
                                             <span>{project.client}</span>

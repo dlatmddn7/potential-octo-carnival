@@ -25,18 +25,18 @@ const steps = [
 
 const Process = () => {
     return (
-        <section id="process" className="py-32 bg-gray-50 relative overflow-hidden">
+        <section id="process" className="py-16 md:py-32 bg-gray-50 relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-200/30 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-200/30 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="text-center mb-20">
+                <div className="text-center mb-10 md:mb-20">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-black mb-6"
+                        className="text-2xl md:text-5xl font-black mb-4 md:mb-6"
                     >
                         ONE-STOP <span className="text-primary">SYSTEM</span>
                     </motion.h2>
@@ -45,14 +45,14 @@ const Process = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-gray-400 text-lg max-w-2xl mx-auto"
+                        className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto"
                     >
                         비제로스튜디오는 기획부터 촬영, 편집까지 모든 과정을 직접 수행하는<br />
                         체계적이고 안정적인 올인원 프로세스를 보유하고 있습니다.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 relative">
                     {/* Connecting Line (Desktop) */}
                     <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-y-1/2 z-0" />
 
@@ -63,10 +63,10 @@ const Process = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="relative z-10 bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl hover:border-purple-200 transition-all duration-300 group"
+                            className="relative z-10 bg-white border border-gray-100 rounded-xl md:rounded-2xl p-4 md:p-8 hover:shadow-xl hover:border-purple-200 transition-all duration-300 group"
                         >
-                            <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-white rounded-full flex items-center justify-center mb-8 mx-auto shadow-sm border border-gray-100 group-hover:scale-110 transition-transform duration-300">
-                                {React.cloneElement(step.icon, { className: "w-10 h-10 text-purple-600" })}
+                            <div className="w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-gray-100 to-white rounded-full flex items-center justify-center mb-4 md:mb-8 mx-auto shadow-sm border border-gray-100 group-hover:scale-110 transition-transform duration-300">
+                                {React.cloneElement(step.icon, { className: "w-6 h-6 md:w-10 md:h-10 text-purple-600" })}
                             </div>
                             <h3 className="text-xl font-bold mb-2 text-center flex items-center justify-center gap-2">
                                 <span className="text-primary font-mono text-sm">{step.id}.</span> {step.title}
