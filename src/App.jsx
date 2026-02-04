@@ -44,7 +44,7 @@ function App() {
             </div>
           </div>
           <div className="text-right w-full md:w-auto">
-            <p className="font-bold text-gray-400">Start from Zero, Create Infinite.</p>
+            <p className="font-bold text-gray-400">Start from Zero, Create Infinite. BEZERO Studio</p>
           </div>
         </div>
       </footer>
