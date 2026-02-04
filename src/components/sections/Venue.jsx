@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, ChevronRight, Users, CheckCircle, X, Grid3X3, ArrowRight, Building2 } from 'lucide-react';
 
@@ -191,62 +192,65 @@ const Venue = () => {
                 </motion.div>
             </div>
 
-            {/* Full Gallery Modal */}
-            <AnimatePresence>
-                {showGallery && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed top-0 left-0 right-0 bottom-0 bg-white z-[9999] overflow-y-auto"
-                    >
-                        {/* Full screen white background to cover everything */}
-                        <div className="min-h-screen bg-white">
-                            {/* Fixed Close Button */}
-                            <button
-                                onClick={closeGallery}
-                                className="fixed top-20 right-4 z-[210] p-3 bg-gray-900 hover:bg-gray-800 rounded-full transition-colors shadow-lg"
-                            >
-                                <X className="w-6 h-6 text-white" />
-                            </button>
+            {/* Full Gallery Modal - Portal to body for z-index isolation */}
+            {ReactDOM.createPortal(
+                <AnimatePresence>
+                    {showGallery && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed top-0 left-0 right-0 bottom-0 bg-white z-[9999] overflow-y-auto"
+                        >
+                            {/* Full screen white background to cover everything */}
+                            <div className="min-h-screen bg-white">
+                                {/* Fixed Close Button */}
+                                <button
+                                    onClick={closeGallery}
+                                    className="fixed top-20 right-4 z-[210] p-3 bg-gray-900 hover:bg-gray-800 rounded-full transition-colors shadow-lg"
+                                >
+                                    <X className="w-6 h-6 text-white" />
+                                </button>
 
-                            {/* Gallery Header */}
-                            <div className="sticky top-0 bg-white border-b border-gray-200 z-10">
-                                <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-                                    <div className="flex items-center gap-3">
-                                        <button
-                                            onClick={closeGallery}
-                                            className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full font-bold text-gray-700 transition-colors"
-                                        >
-                                            ← 홈으로 돌아가기
-                                        </button>
+                                {/* Gallery Header */}
+                                <div className="sticky top-0 bg-white border-b border-gray-200 z-10">
+                                    <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+                                        <div className="flex items-center gap-3">
+                                            <button
+                                                onClick={closeGallery}
+                                                className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full font-bold text-gray-700 transition-colors"
+                                            >
+                                                ← 홈으로 돌아가기
+                                            </button>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <Building2 className="w-5 h-5 text-purple-600" />
+                                            <h2 className="text-lg md:text-xl font-bold text-gray-900">베뉴 리스트</h2>
+                                            <span className="text-sm text-gray-500">({venues.length}개)</span>
+                                        </div>
                                     </div>
-                                    <div className="flex items-center gap-3">
-                                        <Building2 className="w-5 h-5 text-purple-600" />
-                                        <h2 className="text-lg md:text-xl font-bold text-gray-900">베뉴 리스트</h2>
-                                        <span className="text-sm text-gray-500">({venues.length}개)</span>
+                                </div>
+
+                                {/* Gallery Content */}
+                                <div className="max-w-5xl mx-auto px-6 py-8 pb-24 min-h-screen">
+                                    <div className="flex flex-col gap-4">
+                                        {venues.map((venue, index) => (
+                                            <VenueCard
+                                                key={index}
+                                                venue={venue}
+                                                index={index}
+                                                isOpen={galleryOpenIndex === index}
+                                                onClick={() => setGalleryOpenIndex(galleryOpenIndex === index ? -1 : index)}
+                                            />
+                                        ))}
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Gallery Content */}
-                            <div className="max-w-5xl mx-auto px-6 py-8 pb-24 min-h-screen">
-                                <div className="flex flex-col gap-4">
-                                    {venues.map((venue, index) => (
-                                        <VenueCard
-                                            key={index}
-                                            venue={venue}
-                                            index={index}
-                                            isOpen={galleryOpenIndex === index}
-                                            onClick={() => setGalleryOpenIndex(galleryOpenIndex === index ? -1 : index)}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                        </motion.div>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
         </section>
     );
 };
