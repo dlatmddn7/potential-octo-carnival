@@ -23,7 +23,8 @@ function App() {
       <Consulting />
       <Portfolio />
       <Media />
-      <Partners />
+      {/* Partners section temporarily hidden until client logos are ready */}
+      {/* <Partners /> */}
       <Venue />
       <Contact />
       <FloatingWidget />

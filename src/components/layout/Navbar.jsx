@@ -58,7 +58,10 @@ const Navbar = () => {
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                         </button>
                     ))}
-                    <button className="px-5 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all text-xs font-bold uppercase">
+                    <button
+                        onClick={() => scrollTo('contact')}
+                        className="px-5 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all text-xs font-bold uppercase"
+                    >
                         프로젝트 시작하기
                     </button>
                 </div>
