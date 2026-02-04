@@ -4,29 +4,79 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, ChevronRight, Users, CheckCircle, X, Grid3X3, ArrowRight, Building2 } from 'lucide-react';
 
 const venues = [
+    // 기존 베뉴
     {
         title: 'KDJ Convention Center',
         location: '광주 서구 상무누리로 30',
         capacity: 'Max 3,000 People',
+        category: '대규모',
         features: ['대규모 컨퍼런스', '국제회의 시설', '편리한 주차', 'VIP 대기실']
     },
     {
         title: 'Gwangju Content Cube',
         location: '광주 남구 송암로 60',
         capacity: '100~300 People',
+        category: '대규모',
         features: ['실감형 미디어 장비', '하이브리드 행사', '스튜디오 시설', '최신 음향/조명']
     },
     {
         title: 'I-PLEX Gwangju',
         location: '광주 동구 동계천로 150',
         capacity: '50~100 People',
+        category: '비즈니스',
         features: ['스타트업 행사 특화', '합리적인 대관료', '코워킹 스페이스', '동명동 인접']
     },
+    // 비즈니스 중심 (전문 시설 및 호텔)
     {
-        title: 'ACC (Asia Culture Center)',
+        title: '아이와즈 (수완지구)',
+        location: '광주 광산구 수완지구',
+        capacity: '15~50 People',
+        category: '비즈니스',
+        features: ['LED 풀스크린 세미나실', '케이터링 올인원 서비스', '현대적 인테리어', '전용 주차장']
+    },
+    {
+        title: '홀리데이인 광주호텔',
+        location: '광주 서구 상무지구',
+        capacity: 'Max 80 People',
+        category: '비즈니스',
+        features: ['호텔급 서비스', '강력한 음향/영상 장비', '상무지구 접근성', '학회/세미나 적합']
+    },
+    {
+        title: '광주디자인진흥원',
+        location: '광주 북구 첨단',
+        capacity: '15~50 People',
+        category: '비즈니스',
+        features: ['합리적인 대관료', '공공기관 시설', '시설 관리 우수', '중규모/대규모 선택']
+    },
+    // 유니크 베뉴 (감성 및 문화 공간)
+    {
+        title: 'ACC (국립아시아문화전당)',
         location: '광주 동구 문화전당로 38',
+        capacity: 'Max 500 People',
+        category: '유니크',
+        features: ['광주 대표 랜드마크', '16개 중소 회의실', '행사 상징성 부여', '다양한 공간 옵션']
+    },
+    {
+        title: '전통문화관 (무등산)',
+        location: '광주 무등산 인근',
         capacity: 'Various Options',
-        features: ['유니크 베뉴', '예술/문화 행사', '도심 랜드마크', '야외 광장 연계']
+        category: '유니크',
+        features: ['한옥 공간 (서석당, 입석당)', '고즈넉한 분위기', '한옥 스테이 가능', '전통 체험 연계']
+    },
+    // 실속형 및 공유 공간
+    {
+        title: '광주 공유센터',
+        location: '광주 남구 진월동',
+        capacity: '10~30 People',
+        category: '실속형',
+        features: ['무료/저렴한 대관', '빔프로젝터/노트북 대여', '쾌적한 주차', '소규모 워크숍 적합']
+    },
+    {
+        title: '광주청년센터',
+        location: '광주 동구 충장로',
+        capacity: '3~10 People',
+        category: '실속형',
+        features: ['시내 중심가 위치', '소모임실/중회의실', '청년 대상 행사', '가벼운 미팅 적합']
     },
 ];
 
