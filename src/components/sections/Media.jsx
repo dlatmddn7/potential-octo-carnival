@@ -124,48 +124,68 @@ const videos = [
         title: "2022 광주주류페스타 - 리와인드프롬오아시스",
         category: "라이브커머스",
         videoId: "aacNYG7d8oE",
+        source: "youtube",
         description: "광주주류페스타 X 아이플렉스 리와인드프롬오아시스 라이브커머스"
+    },
+    // 결과보고 영상
+    {
+        id: 18,
+        title: "광주불교연합회 2025년도 결과보고영상",
+        category: "결과보고",
+        videoId: "18Iny9th1ijpwnzwLeaoVk3VoXGdDxErG",
+        source: "gdrive",
+        description: "광주불교연합회 2025년도 활동 결과보고 영상"
     },
 ];
 
 // Video Card Component for reuse
-const VideoCard = ({ video, onClick, small = false }) => (
-    <div
-        onClick={() => onClick(video)}
-        className="group cursor-pointer"
-    >
-        <div className={`relative overflow-hidden rounded-xl md:rounded-2xl bg-gray-200 aspect-video shadow-lg`}>
-            <img
-                src={`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`}
-                alt={video.title}
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                <div className={`${small ? 'w-10 h-10 md:w-14 md:h-14' : 'w-14 h-14 md:w-16 md:h-16'} bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl`}>
-                    <Play className={`${small ? 'w-5 h-5 md:w-6 md:h-6' : 'w-6 h-6 md:w-8 md:h-8'} text-purple-600 ml-1`} />
+const VideoCard = ({ video, onClick, small = false }) => {
+    // Get thumbnail based on source
+    const getThumbnail = () => {
+        if (video.source === 'gdrive') {
+            return `https://drive.google.com/thumbnail?id=${video.videoId}&sz=w640`;
+        }
+        return `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
+    };
+
+    return (
+        <div
+            onClick={() => onClick(video)}
+            className="group cursor-pointer"
+        >
+            <div className={`relative overflow-hidden rounded-xl md:rounded-2xl bg-gray-200 aspect-video shadow-lg`}>
+                <img
+                    src={getThumbnail()}
+                    alt={video.title}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                    <div className={`${small ? 'w-10 h-10 md:w-14 md:h-14' : 'w-14 h-14 md:w-16 md:h-16'} bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl`}>
+                        <Play className={`${small ? 'w-5 h-5 md:w-6 md:h-6' : 'w-6 h-6 md:w-8 md:h-8'} text-purple-600 ml-1`} />
+                    </div>
+                </div>
+                <div className="absolute top-2 md:top-4 left-2 md:left-4">
+                    <span className="px-2 md:px-3 py-1 bg-purple-600 text-white text-[10px] md:text-xs font-bold rounded-full">
+                        {video.category}
+                    </span>
                 </div>
             </div>
-            <div className="absolute top-2 md:top-4 left-2 md:left-4">
-                <span className="px-2 md:px-3 py-1 bg-purple-600 text-white text-[10px] md:text-xs font-bold rounded-full">
-                    {video.category}
-                </span>
+            <div className="mt-2 md:mt-4">
+                <h3 className={`${small ? 'text-sm md:text-lg' : 'text-base md:text-xl'} font-bold text-gray-900 group-hover:text-purple-600 transition-colors line-clamp-1`}>
+                    {video.title}
+                </h3>
+                <p className={`text-gray-500 ${small ? 'text-xs' : 'text-sm'} mt-1 line-clamp-1`}>{video.description}</p>
             </div>
         </div>
-        <div className="mt-2 md:mt-4">
-            <h3 className={`${small ? 'text-sm md:text-lg' : 'text-base md:text-xl'} font-bold text-gray-900 group-hover:text-purple-600 transition-colors line-clamp-1`}>
-                {video.title}
-            </h3>
-            <p className={`text-gray-500 ${small ? 'text-xs' : 'text-sm'} mt-1 line-clamp-1`}>{video.description}</p>
-        </div>
-    </div>
-);
+    );
+};
 
 const Media = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [showGallery, setShowGallery] = useState(false);
     const [activeFilter, setActiveFilter] = useState('전체');
 
-    const categories = ['전체', '지역홍보', '인터뷰 콘텐츠', '라이브커머스', '헌혈캠페인'];
+    const categories = ['전체', '지역홍보', '인터뷰 콘텐츠', '라이브커머스', '헌혈캠페인', '결과보고'];
 
     // Listen for closeModals event from Navbar
     useEffect(() => {
@@ -379,7 +399,10 @@ const Media = () => {
                             onClick={(e) => e.stopPropagation()}
                         >
                             <iframe
-                                src={`https://www.youtube.com/embed/${selectedVideo.videoId}?autoplay=1`}
+                                src={selectedVideo.source === 'gdrive'
+                                    ? `https://drive.google.com/file/d/${selectedVideo.videoId}/preview`
+                                    : `https://www.youtube.com/embed/${selectedVideo.videoId}?autoplay=1`
+                                }
                                 title={selectedVideo.title}
                                 className="w-full h-full rounded-2xl"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
