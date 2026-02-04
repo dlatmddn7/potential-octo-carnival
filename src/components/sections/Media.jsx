@@ -136,6 +136,151 @@ const videos = [
         source: "gdrive",
         description: "광주불교연합회 2025년도 활동 결과보고 영상"
     },
+    // 기업홍보 영상 (Google Drive)
+    {
+        id: 19,
+        title: "호산농장 천관쌀 브랜드 홍보영상",
+        category: "기업홍보",
+        videoId: "19b1g3eunQ6kqSt2znh2gcxwMXyn_fqoF",
+        source: "gdrive",
+        description: "호산농장의 프리미엄 천관쌀 브랜드 홍보"
+    },
+    {
+        id: 20,
+        title: "시유플레닛 기업 홍보영상",
+        category: "기업홍보",
+        videoId: "1feKeANsmycYn_89mF4OarNVtjbJlkRxB",
+        source: "gdrive",
+        description: "시유플레닛 기업 소개 홍보영상"
+    },
+    {
+        id: 21,
+        title: "시유플래닛 숏츠(릴스) 홍보영상",
+        category: "기업홍보",
+        videoId: "191tU7f_595bLWZHg-j_B_1ae4YhMdPYa",
+        source: "gdrive",
+        description: "시유플래닛 SNS용 숏폼 홍보영상"
+    },
+    {
+        id: 22,
+        title: "소트뉴 기업 홍보영상",
+        category: "기업홍보",
+        videoId: "1g_9MjUZUN4yqktVrJsRwvrWCyTxQdO2m",
+        source: "gdrive",
+        description: "소트뉴 기업 소개 홍보영상"
+    },
+    {
+        id: 23,
+        title: "유니코니 팝업스토어 라이브커머스",
+        category: "라이브커머스",
+        videoId: "1NcYN5WrPgRMSjX4tnXYgULeNrPfDPuKr",
+        source: "gdrive",
+        description: "유니코니 팝업스토어 라이브커머스 방송"
+    },
+    {
+        id: 24,
+        title: "2025 빛고을로봇페스티벌 스케치 홍보영상",
+        category: "행사영상",
+        videoId: "1JmdFYQAMGDOnHo2H618WQWMVpr1iwkK3",
+        source: "gdrive",
+        description: "2025 빛고을로봇페스티벌 현장 스케치 영상"
+    },
+    {
+        id: 25,
+        title: "행복한쓰임 기업 홍보영상",
+        category: "기업홍보",
+        videoId: "1hg6SiideTbcZol-tILUbdD1PmRz3bKS1",
+        source: "gdrive",
+        description: "행복한쓰임 기업 소개 홍보영상"
+    },
+    {
+        id: 26,
+        title: "인그래픽스 기업 홍보영상",
+        category: "기업홍보",
+        videoId: "10WFlW4VkJcJT44StZf8YIlT9ET4R0FJK",
+        source: "gdrive",
+        description: "인그래픽스 기업 소개 홍보영상"
+    },
+    {
+        id: 27,
+        title: "빵글빵글 기업 홍보영상",
+        category: "기업홍보",
+        videoId: "1X1WCAzZnNeseRES8syxa_DFWwH3t_QWz",
+        source: "gdrive",
+        description: "빵글빵글 베이커리 기업 홍보영상"
+    },
+    {
+        id: 28,
+        title: "예술약방 기업 홍보영상",
+        category: "기업홍보",
+        videoId: "1dBHAZ8G6BVsFDCuGmWFJUtZ0UXEYk5xt",
+        source: "gdrive",
+        description: "예술약방 기업 소개 홍보영상"
+    },
+    {
+        id: 29,
+        title: "헬프포유 기업 홍보영상",
+        category: "기업홍보",
+        videoId: "1zgdX8XEDo6SEidBqWfzd5q_Fv4w6cgAh",
+        source: "gdrive",
+        description: "헬프포유 기업 소개 홍보영상"
+    },
+    {
+        id: 30,
+        title: "어감 쿡방행사 홍보영상",
+        category: "지역홍보",
+        videoId: "181qH2mZi-tuaW3tG8fgGJEWWZ9kikdg5",
+        source: "gdrive",
+        description: "광주동구 서남동 마을사랑채 어감 쿡방행사"
+    },
+    {
+        id: 31,
+        title: "선아리 기업 홍보영상",
+        category: "기업홍보",
+        videoId: "1IwtOLcriquXFJ1j8NrUfRt8nJGdx4Gwd",
+        source: "gdrive",
+        description: "선아리 기업 소개 홍보영상"
+    },
+    {
+        id: 32,
+        title: "2024 별별동구 스토리텔링 성과공유영상",
+        category: "결과보고",
+        videoId: "1FFDmyWTxvCaOZ1Jck5VG6mWur_n68TgD",
+        source: "gdrive",
+        description: "2024 별별동구 스토리텔링 성과공유 영상"
+    },
+    {
+        id: 33,
+        title: "공공 개소식 및 기업 홍보영상",
+        category: "기업홍보",
+        videoId: "1Ov2q8p3eZlkatLKcpH87SJly365QSaMJ",
+        source: "gdrive",
+        description: "공공 장소 개소식 및 기업 홍보영상"
+    },
+    {
+        id: 34,
+        title: "창업행사 하이라이트 영상",
+        category: "행사영상",
+        videoId: "1PpnRrBmyvKylWE47pLdJ9Qnb1w5PCyBm",
+        source: "gdrive",
+        description: "창업행사 현장 하이라이트 영상"
+    },
+    {
+        id: 35,
+        title: "중견중소기업 오픈이노베이션 기업인터뷰",
+        category: "인터뷰 콘텐츠",
+        videoId: "1Kqsp6-I5nRZDuY56uHcxW_noEtZRtUf-",
+        source: "gdrive",
+        description: "중견중소기업 오픈이노베이션 창업행사 기업인터뷰"
+    },
+    {
+        id: 36,
+        title: "IBK창공2기 입소식, 워크숍 하이라이트",
+        category: "행사영상",
+        videoId: "1WcdlDKu8DBizqYmcF7TZYRoL0A-_QISv",
+        source: "gdrive",
+        description: "IBK창공 광주 2기 입소식 및 워크숍 하이라이트 영상"
+    },
 ];
 
 // Video Card Component for reuse
@@ -185,7 +330,7 @@ const Media = () => {
     const [showGallery, setShowGallery] = useState(false);
     const [activeFilter, setActiveFilter] = useState('전체');
 
-    const categories = ['전체', '지역홍보', '인터뷰 콘텐츠', '라이브커머스', '헌혈캠페인', '결과보고'];
+    const categories = ['전체', '기업홍보', '지역홍보', '인터뷰 콘텐츠', '라이브커머스', '행사영상', '결과보고', '헌혈캠페인'];
 
     // Listen for closeModals event from Navbar
     useEffect(() => {
