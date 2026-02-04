@@ -277,7 +277,7 @@ const Media = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-white z-50 overflow-y-auto"
+                        className="fixed inset-0 bg-white z-[100] overflow-y-auto"
                     >
                         {/* Fixed Close Button - Always Visible */}
                         <button
