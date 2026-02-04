@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X, Youtube, Film, ExternalLink, Grid3X3, ArrowRight } from 'lucide-react';
 
@@ -166,6 +166,18 @@ const Media = () => {
     const [activeFilter, setActiveFilter] = useState('전체');
 
     const categories = ['전체', '지역홍보', '인터뷰 콘텐츠', '라이브커머스', '헌혈캠페인'];
+
+    // Listen for closeModals event from Navbar
+    useEffect(() => {
+        const handleCloseModals = () => {
+            if (showGallery) {
+                closeGallery();
+            }
+        };
+
+        window.addEventListener('closeModals', handleCloseModals);
+        return () => window.removeEventListener('closeModals', handleCloseModals);
+    }, [showGallery]);
 
     const previewVideos = videos.slice(0, 3); // Show only 3 on main page
 
