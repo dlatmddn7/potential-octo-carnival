@@ -279,6 +279,14 @@ const Media = () => {
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 bg-white z-50 overflow-y-auto"
                     >
+                        {/* Fixed Close Button - Always Visible */}
+                        <button
+                            onClick={closeGallery}
+                            className="fixed top-4 right-4 z-20 p-3 bg-gray-900 hover:bg-gray-800 rounded-full transition-colors shadow-lg"
+                        >
+                            <X className="w-6 h-6 text-white" />
+                        </button>
+
                         {/* Gallery Header */}
                         <div className="sticky top-0 bg-white/95 backdrop-blur-md border-b border-gray-200 z-10">
                             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -289,7 +297,7 @@ const Media = () => {
                                 </div>
                                 <button
                                     onClick={closeGallery}
-                                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                                    className="hidden md:flex p-2 hover:bg-gray-100 rounded-full transition-colors"
                                 >
                                     <X className="w-6 h-6 text-gray-600" />
                                 </button>
