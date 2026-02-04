@@ -526,44 +526,47 @@ const Media = () => {
                 document.body
             )}
 
-            {/* Video Player Modal */}
-            <AnimatePresence>
-                {selectedVideo && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/90 z-[60] flex items-center justify-center p-4"
-                        onClick={closeVideo}
-                    >
-                        <button
-                            onClick={closeVideo}
-                            className="absolute top-6 right-6 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
-                        >
-                            <X className="w-8 h-8 text-white" />
-                        </button>
+            {/* Video Player Modal - Portal with highest z-index */}
+            {ReactDOM.createPortal(
+                <AnimatePresence>
+                    {selectedVideo && (
                         <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            className="w-full max-w-5xl aspect-video"
-                            onClick={(e) => e.stopPropagation()}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 bg-black/90 z-[99999] flex items-center justify-center p-4"
+                            onClick={closeVideo}
                         >
-                            <iframe
-                                src={selectedVideo.source === 'gdrive'
-                                    ? `https://drive.google.com/file/d/${selectedVideo.videoId}/preview`
-                                    : `https://www.youtube.com/embed/${selectedVideo.videoId}?autoplay=1`
-                                }
-                                title={selectedVideo.title}
-                                className="w-full h-full rounded-2xl"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
+                            <button
+                                onClick={closeVideo}
+                                className="absolute top-6 right-6 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+                            >
+                                <X className="w-8 h-8 text-white" />
+                            </button>
+                            <motion.div
+                                initial={{ scale: 0.9, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                exit={{ scale: 0.9, opacity: 0 }}
+                                className="w-full max-w-5xl aspect-video"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <iframe
+                                    src={selectedVideo.source === 'gdrive'
+                                        ? `https://drive.google.com/file/d/${selectedVideo.videoId}/preview`
+                                        : `https://www.youtube.com/embed/${selectedVideo.videoId}?autoplay=1`
+                                    }
+                                    title={selectedVideo.title}
+                                    className="w-full h-full rounded-2xl"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </motion.div>
                         </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </section >
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
+        </section>
     );
 };
 
